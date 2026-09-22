@@ -46,6 +46,27 @@ Identity canon is not a hidden biological true self, a substitute for system/dev
 
 A stateless task agent, narrow automation worker, or agent whose behavior is fully specified by current instructions may not need identity canon at all.
 
+## Quick start — how to use this
+
+The public repository is the framework/template. Your agent's **consuming repository or system** should become the owner of its actual canon.
+
+1. **Create the identity owner.** Copy/adapt the core `canon/` files and `skills/identity-canon/SKILL.md` into the repository or system that should own this agent's current identity. Fork the whole framework only if that is genuinely the simplest fit.
+2. **Keep unknowns unknown.** Leave unanswered fields as `null` / `unexplored`. Do not fill the template just to make it look complete.
+3. **Run a Bootstrap pass.** Use the identity-canon skill for a small conversation about values, communication, temperament, working style, boundaries, and what should remain undecided.
+4. **Record candidates, not instant canon.** Put tentative answers in `exploratory` or `candidate` state with honest provenance. A first answer does not have to become `current`.
+5. **Promote deliberately.** Move a candidate to `current` only when the value, provenance, confidence, and identity owner are clear and the choice has earned stability.
+6. **Evolve without rewriting history.** When current canon changes, update the current value and record a `refined`, `superseded`, or `retired` history event instead of pretending the old answer never existed.
+7. **Validate and review.** Run the validator, then periodically review for contradictions, accidental user mirroring, stale choices, unsupported certainty, and things that actually belong in memory or runtime state.
+
+Typical validation:
+
+```text
+python3 -m pip install -r requirements.txt
+python3 tools/validate_identity.py --self-test
+```
+
+A good first session should end with a **small number of candidates and a healthy amount of `null`**, not a fully populated fictional person.
+
 ## Blank means blank
 
 The core template in [`canon/`](canon/) starts with identity values set to YAML `null`.

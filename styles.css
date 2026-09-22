@@ -597,6 +597,55 @@ tbody td {
   color: var(--muted);
 }
 
+.quick-start {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: quickstart;
+  border-block: 1px solid var(--line-strong);
+}
+
+.quick-start li {
+  counter-increment: quickstart;
+  display: grid;
+  grid-template-columns: minmax(170px, .45fr) minmax(0, 1.55fr);
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-start li:last-child {
+  border-bottom: 0;
+}
+
+.quick-start strong::before {
+  content: counter(quickstart, decimal-leading-zero) " ";
+  margin-right: .45rem;
+  color: var(--violet);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.quick-start span {
+  color: var(--muted);
+}
+
+.quick-start-finish {
+  margin-top: 2rem;
+  padding: 1.05rem 0 1.05rem 1rem;
+  border-left: 2px solid var(--violet);
+}
+
+.quick-start-finish strong {
+  display: block;
+  color: var(--text);
+}
+
+.quick-start-finish p {
+  max-width: var(--measure);
+  margin: .45rem 0 0;
+  color: var(--muted);
+}
+
 .skill-modes {
   list-style: none;
   margin: 0;
@@ -1179,6 +1228,7 @@ footer {
 
   .layer-list > div,
   .provenance-list > div,
+  .quick-start li,
   .skill-modes li {
     grid-template-columns: 1fr;
     gap: .35rem;
