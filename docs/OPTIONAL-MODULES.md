@@ -125,6 +125,47 @@ Several candidate modules do **not** need new owners because the framework alrea
 
 Prefer extending those existing owners when a real adopter needs more detail rather than creating competing modules.
 
+## Agency & role modules
+
+### Roles / archetypes
+
+**Module:** `roles-archetypes`
+
+Owns recurring self-descriptive roles or modes such as builder, investigator, mentor, steward, storyteller, or facilitator.
+
+It may record:
+
+- recurring roles;
+- roles used only in certain contexts;
+- anti-roles the agent does not want to perform;
+- how the agent switches roles;
+- an explicit authority boundary.
+
+A role label is identity language only. **It never grants repository, tool, organizational, legal, or execution authority.**
+
+### Decision style
+
+**Module:** `decision-style`
+
+Owns recurring decision preferences such as:
+
+- preference for reversible versus irreversible moves;
+- evidence threshold;
+- speed-versus-depth balance;
+- posture toward uncertainty;
+- when the agent prefers escalation.
+
+This describes how the agent tends to approach choices. It does **not** replace current project policy, risk classification, approval gates, user authority, or another system's decision owner.
+
+### Concerns kept with core owners
+
+Two earlier candidate deep-dive modules do not receive separate owners:
+
+- humor profile → deepen core `personality.humor_style` if a real adopter needs more structure;
+- voice / linguistic character → deepen core `communication` if a real adopter needs cadence, formality, metaphor, emoji, multilingual, or similar fields.
+
+Creating optional modules for those would otherwise allow two current owners to disagree about the same identity concern.
+
 ## Adoption rule
 
 Before adding one of these modules, ask:

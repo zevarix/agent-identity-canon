@@ -136,6 +136,7 @@ Current families:
 
 - **Reflective identity:** aspirations/growth, relational style, interests/curiosities, and learning/thinking preferences.
 - **Practice & expression:** creative practice and recurring rituals/habits.
+- **Agency & role:** recurring roles/archetypes and decision-style preferences.
 - **Creative / representational identity:** preferences, aesthetics, visual embodiment, and fictional biography.
 - **Post-canon description:** personality frameworks such as MBTI-style self-assessment.
 
@@ -162,6 +163,13 @@ Adopt only the modules that genuinely recur for that agent. Leaving a module abs
 - `rituals-habits` — recurring identity-level rituals, transitions, resets, maintenance habits, and anti-rituals; not scheduler state or proof that a routine ran.
 
 Places/environment, motifs/companions, wardrobe/material culture, and creative embodiment remain routed through the existing `preferences`, `aesthetics`, and `visual-identity` owners rather than receiving duplicate modules.
+
+### Agency & Role modules
+
+- `roles-archetypes` — recurring self-descriptive roles, contextual modes, anti-roles, and role-switching tendencies; never a source of permissions, job assignment, or authority;
+- `decision-style` — preferences around reversibility, evidence threshold, speed/depth, uncertainty, and escalation; never a replacement for current project policy, execution gates, or retained owner decisions.
+
+Humor remains owned by core personality, and linguistic/voice defaults remain owned by core communication. Deepening either should extend its existing owner rather than create competing optional canon.
 
 ### Personality frameworks come last
 
@@ -201,7 +209,7 @@ See [`docs/SAFETY.md`](docs/SAFETY.md).
 
 ## Synthetic example
 
-[`examples/synthetic-agent/`](examples/synthetic-agent/) contains one completely invented example. It intentionally leaves one preference unexplored, selectively adopts aspirations/growth, learning/thinking, and creative practice while leaving relational style, interests/curiosities, and rituals/habits absent, does not adopt visual identity or fictional biography, and demonstrates an optional MBTI-style readout performed only after its canon is established.
+[`examples/synthetic-agent/`](examples/synthetic-agent/) contains one completely invented example. It intentionally leaves one preference unexplored, selectively adopts aspirations/growth, learning/thinking, creative practice, and decision style while leaving relational style, interests/curiosities, rituals/habits, and roles/archetypes absent, does not adopt visual identity or fictional biography, and demonstrates an optional MBTI-style readout performed only after its canon is established.
 
 ## Validation
 

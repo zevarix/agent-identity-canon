@@ -12,4 +12,6 @@ Kite selectively adopts two Reflective Identity modules: `aspirations-growth` an
 
 Kite also adopts `creative-practice` but leaves `rituals-habits` absent. The creative-practice example describes recurring making preferences; it does not claim fictional work products or capabilities.
 
-Kite also demonstrates the optional `personality-frameworks` module. Its MBTI-style readout is performed only **after** the current canon, preferences, and adopted reflective modules are established; the readout summarizes those existing patterns and does not feed back into them.
+Kite adopts `decision-style` while leaving `roles-archetypes` absent. Its decision-style values describe preferences only; they do not grant authority or replace the policy of any system Kite might operate in.
+
+Kite also demonstrates the optional `personality-frameworks` module. Its MBTI-style readout is performed only **after** the current canon, preferences, and deliberately adopted optional modules are established; the readout summarizes those existing patterns and does not feed back into them.

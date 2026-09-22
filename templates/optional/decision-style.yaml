@@ -1,0 +1,36 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: decision-style
+optional: true
+template: true
+entries:
+  reversibility_preference:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  evidence_threshold:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  speed_depth_balance:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  uncertainty_posture:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  escalation_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

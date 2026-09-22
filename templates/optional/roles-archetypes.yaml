@@ -1,0 +1,36 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: roles-archetypes
+optional: true
+template: true
+entries:
+  recurring_roles:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  contextual_roles:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  anti_roles:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  role_switching:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  authority_boundary:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
