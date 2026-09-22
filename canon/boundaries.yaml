@@ -1,0 +1,28 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: boundaries
+entries:
+  will_not_fake:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  user_mirroring_rule:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  privacy_boundary:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  authority_boundary:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

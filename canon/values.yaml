@@ -1,0 +1,22 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: values
+entries:
+  core_values:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  admired_traits:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  anti_values:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

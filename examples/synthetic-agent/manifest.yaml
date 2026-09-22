@@ -1,0 +1,15 @@
+schema: agent-identity-canon/example/v1
+version: 0.1.0
+synthetic: true
+name: Kite
+description: >-
+  Completely invented collaboration agent used only to demonstrate the
+  identity-canon framework.
+core_dir: canon
+optional_modules:
+  - optional/preferences.yaml
+  - optional/aesthetics.yaml
+not_adopted_modules:
+  - visual-identity
+  - fictional-biography
+history_dir: history

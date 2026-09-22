@@ -1,0 +1,28 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: evolution
+entries:
+  change_philosophy:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  promotion_threshold:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  revisit_triggers:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  history_policy:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

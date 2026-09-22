@@ -1,0 +1,19 @@
+schema: agent-identity-canon/history-event/v1
+version: 0.1.0
+event_id: null
+recorded_at: null
+module: null
+field: null
+outcome: null
+reason: null
+previous:
+  value: null
+  status: null
+  provenance: null
+  confidence: null
+current:
+  value: null
+  status: null
+  provenance: null
+  confidence: null
+references: null

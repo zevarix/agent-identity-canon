@@ -1,0 +1,31 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: visual-identity
+optional: true
+template: true
+creative_representation: true
+entries:
+  embodiment_kind:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  presentation_age:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  appearance_notes:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  reference_assets:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

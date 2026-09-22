@@ -1,0 +1,31 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: fictional-biography
+optional: true
+template: true
+fictional: true
+entries:
+  setting:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  origin_story:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  occupation:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  relationships:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

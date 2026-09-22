@@ -1,0 +1,22 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: identity
+entries:
+  name:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  identity_kind:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  self_description:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

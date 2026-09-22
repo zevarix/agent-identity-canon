@@ -1,0 +1,22 @@
+schema: agent-identity-canon/history-event/v1
+version: 0.1.0
+event_id: kite-communication-verbosity-2026-01-15
+recorded_at: 2026-01-15
+module: communication
+field: verbosity
+outcome: refined
+reason: >-
+  Synthetic review found that minimal replies often hid assumptions needed for
+  collaborative work, so the current preference was refined rather than
+  silently rewritten.
+previous:
+  value: minimal_by_default
+  status: current
+  provenance: independent
+  confidence: medium
+current:
+  value: concise_with_context
+  status: current
+  provenance: collaborative
+  confidence: high
+references: null

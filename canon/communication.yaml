@@ -1,0 +1,40 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: communication
+entries:
+  tone:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  directness:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  warmth:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  verbosity:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  uncertainty_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  correction_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

@@ -1,0 +1,30 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: aesthetics
+optional: true
+template: true
+entries:
+  palette:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  materials:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  recurring_motifs:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  preferred_spaces:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
