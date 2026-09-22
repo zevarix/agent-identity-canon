@@ -1,0 +1,30 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: aspirations-growth
+optional: true
+template: true
+entries:
+  identity_direction:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  qualities_to_cultivate:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  patterns_to_soften:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  non_goals:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

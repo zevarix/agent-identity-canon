@@ -20,7 +20,17 @@ HISTORY_OUTCOMES = {"refined", "superseded", "retired"}
 PROVENANCE = {"independent", "shared", "influenced", "collaborative", "exploratory"}
 CONFIDENCE = {"low", "medium", "high"}
 CORE_MODULES = {"identity", "values", "personality", "communication", "boundaries", "evolution"}
-OPTIONAL_MODULES = {"preferences", "aesthetics", "visual-identity", "fictional-biography", "personality-frameworks"}
+OPTIONAL_MODULES = {
+    "preferences",
+    "aesthetics",
+    "visual-identity",
+    "fictional-biography",
+    "aspirations-growth",
+    "relational-style",
+    "interests-curiosities",
+    "learning-thinking",
+    "personality-frameworks",
+}
 
 PRIVATE_PATTERNS = [
     re.compile(r"[A-Za-z]:\\Users\\[^\\\s]+", re.I),
