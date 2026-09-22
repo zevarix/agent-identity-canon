@@ -31,6 +31,8 @@ OPTIONAL_MODULES = {
     "learning-thinking",
     "creative-practice",
     "rituals-habits",
+    "roles-archetypes",
+    "decision-style",
     "personality-frameworks",
 }
 
@@ -303,8 +305,9 @@ def validate_examples(root: Path, errors: list[str]) -> None:
 def scan_public_safety(root: Path, errors: list[str]) -> None:
     allowed_suffixes = {".md", ".yaml", ".yml", ".py", ".txt"}
     validator_source = Path(__file__).resolve()
+    ignored_parts = {".git", ".venv", "node_modules", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
     for path in root.rglob("*"):
-        if not path.is_file() or ".git" in path.parts or "__pycache__" in path.parts:
+        if not path.is_file() or any(part in ignored_parts for part in path.parts):
             continue
         if path.resolve() == validator_source:
             continue

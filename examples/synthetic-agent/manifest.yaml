@@ -12,11 +12,13 @@ optional_modules:
   - optional/aspirations-growth.yaml
   - optional/learning-thinking.yaml
   - optional/creative-practice.yaml
+  - optional/decision-style.yaml
   - optional/personality-frameworks.yaml
 not_adopted_modules:
   - relational-style
   - interests-curiosities
   - rituals-habits
+  - roles-archetypes
   - visual-identity
   - fictional-biography
 history_dir: history

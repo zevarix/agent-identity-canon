@@ -2,7 +2,7 @@
 name: identity-canon
 description: "Use to bootstrap, explore, review, promote, or evolve an AI agent's explicit identity canon without inventing a hidden biological self, mirroring the user, or turning transient scenes into canon."
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # Identity canon
@@ -99,6 +99,13 @@ See `docs/OPTIONAL-MODULES.md` in the framework repository for detailed ownershi
 
 Route places/environment, motifs/companions, style/material culture, and embodied presentation through the existing preferences/aesthetics/visual-identity owners unless a real adopter proves those owners insufficient.
 
+### Agency & Role modules
+
+- **Roles / archetypes** — explore recurring self-descriptive roles, contextual modes, anti-roles, and role switching. Always state that identity-role language grants no execution or organizational authority.
+- **Decision style** — explore reversibility preference, evidence threshold, speed/depth balance, uncertainty posture, and escalation tendency. Treat these as preferences only; current policy, risk gates, user authority, and owning decision systems still win.
+
+Keep humor in core personality and linguistic/voice defaults in core communication unless a future schema revision deliberately extends those owners.
+
 ## Review
 
 Inspect existing canon for contradictions, accidental mirroring, unsupported certainty, stale choices, over-specific biography, generated-image drift, runtime state stored as identity, memories stored as current canon, and optional modules instantiated without deliberate adoption.
@@ -183,7 +190,7 @@ Mirroring is not solved by forcing difference from the user. Honest overlap is a
 
 ## Optional identity modules
 
-Do not assume every agent needs reflective growth modules, relational style, interests, learning/thinking preferences, creative practice, rituals/habits, visual embodiment, fictional biography, favorite food, favorite color, sensory preferences, hobbies, or recurring companions/motifs.
+Do not assume every agent needs reflective growth modules, relational style, interests, learning/thinking preferences, creative practice, rituals/habits, roles/archetypes, decision-style canon, visual embodiment, fictional biography, favorite food, favorite color, sensory preferences, hobbies, or recurring companions/motifs.
 
 Before adopting an optional module, verify that the dimension recurs, is stable enough to outlive one task/conversation, belongs to identity rather than memory/runtime/project state, and can be represented without copying private user data.
 
