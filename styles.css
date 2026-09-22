@@ -708,6 +708,97 @@ tbody td {
   margin-bottom: 0;
 }
 
+.typology-sequence {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1.12fr;
+  align-items: stretch;
+  border-block: 1px solid var(--line-strong);
+}
+
+.typology-sequence > div {
+  min-height: 170px;
+  padding: 1.1rem .9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.typology-sequence > div:first-child {
+  padding-left: 0;
+}
+
+.typology-sequence > div.typology-result {
+  padding-right: 0;
+  background: rgba(123, 162, 246, .045);
+}
+
+.typology-sequence i {
+  display: grid;
+  place-items: center;
+  padding-inline: .35rem;
+  color: var(--quiet);
+  font-style: normal;
+}
+
+.typology-sequence span {
+  margin-bottom: .4rem;
+  color: var(--violet);
+  font: 700 .72rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.typology-sequence strong {
+  color: var(--text);
+}
+
+.typology-sequence small {
+  margin-top: .45rem;
+  color: var(--quiet);
+  line-height: 1.4;
+}
+
+.typology-rule {
+  margin-top: 2rem;
+  padding: 1.05rem 0 1.05rem 1rem;
+  border-left: 2px solid var(--violet);
+}
+
+.typology-rule strong {
+  display: block;
+  color: var(--text);
+}
+
+.typology-rule p {
+  max-width: var(--measure);
+  margin: .45rem 0 0;
+  color: var(--muted);
+}
+
+.mbti-example {
+  margin-top: 2rem;
+  padding: 1.2rem 0;
+  border-block: 1px solid var(--line);
+}
+
+.mbti-example > strong {
+  display: block;
+  color: var(--accent-strong);
+  font: 720 clamp(2.4rem, 5vw, 3.8rem) ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  line-height: 1;
+  letter-spacing: .03em;
+}
+
+.mbti-example > small {
+  display: block;
+  margin-top: .5rem;
+  color: var(--quiet);
+}
+
+.mbti-example p {
+  max-width: var(--measure);
+  margin: .9rem 0 0;
+  color: var(--muted);
+}
+
 .kite-example {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1246,6 +1337,27 @@ footer {
 
   .kite-example > div:last-child {
     border-bottom: 0 !important;
+  }
+
+  .typology-sequence {
+    grid-template-columns: 1fr;
+  }
+
+  .typology-sequence > div,
+  .typology-sequence > div:first-child,
+  .typology-sequence > div.typology-result {
+    min-height: 0;
+    padding: 1rem 0;
+    background: transparent;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .typology-sequence > div:last-child {
+    border-bottom: 0;
+  }
+
+  .typology-sequence i {
+    display: none;
   }
 
   .paired-projects {

@@ -20,7 +20,7 @@ HISTORY_OUTCOMES = {"refined", "superseded", "retired"}
 PROVENANCE = {"independent", "shared", "influenced", "collaborative", "exploratory"}
 CONFIDENCE = {"low", "medium", "high"}
 CORE_MODULES = {"identity", "values", "personality", "communication", "boundaries", "evolution"}
-OPTIONAL_MODULES = {"preferences", "aesthetics", "visual-identity", "fictional-biography"}
+OPTIONAL_MODULES = {"preferences", "aesthetics", "visual-identity", "fictional-biography", "personality-frameworks"}
 
 PRIVATE_PATTERNS = [
     re.compile(r"[A-Za-z]:\\Users\\[^\\\s]+", re.I),
@@ -122,6 +122,80 @@ def validate_references(data: dict[str, Any], path: Path, root: Path, errors: li
         elif not (root / ref).exists():
             errors.append(f"{relative(path, root)}: missing reference {item!r}")
 
+MBTI_TYPES = {
+    "ISTJ", "ISFJ", "INFJ", "INTJ",
+    "ISTP", "ISFP", "INFP", "INTP",
+    "ESTP", "ESFP", "ENFP", "ENTP",
+    "ESTJ", "ESFJ", "ENFJ", "ENTJ",
+}
+
+MBTI_DIMENSION_PAIRS = (
+    ("introversion", "extraversion"),
+    ("intuition", "sensing"),
+    ("thinking", "feeling"),
+    ("judging", "perceiving"),
+)
+
+
+def validate_mbti_value(value: Any, label: str, errors: list[str]) -> None:
+    if value is None:
+        return
+    if not isinstance(value, dict):
+        errors.append(f"{label}: populated MBTI value must be a mapping")
+        return
+
+    if value.get("assessment_kind") != "informal_self_assessment":
+        errors.append(f"{label}: assessment_kind must be 'informal_self_assessment'")
+    if value.get("official_instrument") is not False:
+        errors.append(f"{label}: official_instrument must be false")
+    if value.get("basis") != "post_canon_snapshot":
+        errors.append(f"{label}: basis must be 'post_canon_snapshot'")
+
+    best_fit = value.get("best_fit")
+    if best_fit not in MBTI_TYPES:
+        errors.append(f"{label}: best_fit must be a recognized four-letter MBTI type")
+
+    nearest = value.get("nearest_neighbor")
+    if nearest is not None:
+        if nearest not in MBTI_TYPES:
+            errors.append(f"{label}: nearest_neighbor must be null or a recognized MBTI type")
+        elif nearest == best_fit:
+            errors.append(f"{label}: nearest_neighbor must differ from best_fit")
+
+    rationale = value.get("rationale")
+    if not isinstance(rationale, str) or not rationale.strip():
+        errors.append(f"{label}: rationale must be a non-empty string")
+
+    caveat = value.get("caveat")
+    if not isinstance(caveat, str) or not caveat.strip():
+        errors.append(f"{label}: caveat must be a non-empty string")
+
+    interpretation = value.get("interpretation")
+    if interpretation is not None and (not isinstance(interpretation, str) or not interpretation.strip()):
+        errors.append(f"{label}: interpretation must be null or a non-empty string")
+
+    leans = value.get("dimension_leans")
+    if leans is not None:
+        if not isinstance(leans, dict):
+            errors.append(f"{label}: dimension_leans must be null or a mapping")
+        else:
+            expected = {item for pair in MBTI_DIMENSION_PAIRS for item in pair}
+            missing = expected - set(leans)
+            extra = set(leans) - expected
+            if missing:
+                errors.append(f"{label}: dimension_leans missing {sorted(missing)}")
+            if extra:
+                errors.append(f"{label}: dimension_leans has unknown keys {sorted(extra)}")
+            for key in expected & set(leans):
+                score = leans.get(key)
+                if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:
+                    errors.append(f"{label}: dimension_leans.{key} must be an integer from 0 to 100")
+            for left, right in MBTI_DIMENSION_PAIRS:
+                if isinstance(leans.get(left), int) and not isinstance(leans.get(left), bool) and isinstance(leans.get(right), int) and not isinstance(leans.get(right), bool):
+                    if leans[left] + leans[right] != 100:
+                        errors.append(f"{label}: {left} + {right} must equal 100")
+
+
 def validate_module(path: Path, root: Path, errors: list[str]) -> None:
     try:
         data = load_yaml(path)
@@ -142,14 +216,21 @@ def validate_module(path: Path, root: Path, errors: list[str]) -> None:
         errors.append(f"{relative(path, root)}: fictional-biography must declare fictional: true")
     if module == "visual-identity" and data.get("creative_representation") is not True:
         errors.append(f"{relative(path, root)}: visual-identity must declare creative_representation: true")
+    if module == "personality-frameworks" and data.get("post_canon_only") is not True:
+        errors.append(f"{relative(path, root)}: personality-frameworks must declare post_canon_only: true")
     entries = data.get("entries")
     if not isinstance(entries, dict) or not entries:
         errors.append(f"{relative(path, root)}: entries must be a non-empty mapping")
         return
     for key, record in entries.items():
-        validate_record(record, f"{relative(path, root)}:{key}", errors)
+        label = f"{relative(path, root)}:{key}"
+        validate_record(record, label, errors)
+        if module == "personality-frameworks" and key == "mbti" and isinstance(record, dict):
+            validate_mbti_value(record.get("value"), label, errors)
         if data.get("template") is True and isinstance(record, dict) and record.get("status") != "unexplored":
             errors.append(f"{relative(path, root)}:{key}: template entries must remain unexplored")
+    if module == "personality-frameworks" and "mbti" not in entries:
+        errors.append(f"{relative(path, root)}: personality-frameworks requires an mbti entry")
     validate_references(data, path, root, errors)
 
 def validate_history(path: Path, root: Path, errors: list[str], template: bool = False) -> None:
@@ -291,6 +372,50 @@ def self_test() -> list[str]:
         validate_module(fictional, Path(directory), errors)
         if not any("fictional: true" in item for item in errors):
             failures.append("self-test: unlabeled fictional biography was not rejected")
+
+        framework = Path(directory) / "framework.yaml"
+        framework.write_text(
+            "schema: agent-identity-canon/module/v1\n"
+            "version: 0.1.0\n"
+            "module: personality-frameworks\n"
+            "optional: true\n"
+            "entries:\n"
+            "  mbti:\n"
+            "    value: null\n"
+            "    status: unexplored\n"
+            "    provenance: null\n"
+            "    confidence: null\n"
+            "    revisit_when: null\n",
+            encoding="utf-8",
+        )
+        errors = []
+        validate_module(framework, Path(directory), errors)
+        if not any("post_canon_only: true" in item for item in errors):
+            failures.append("self-test: personality framework without post-canon fence was not rejected")
+
+        bad_mbti = {
+            "assessment_kind": "informal_self_assessment",
+            "official_instrument": False,
+            "basis": "post_canon_snapshot",
+            "best_fit": "ISTJ",
+            "nearest_neighbor": "INTJ",
+            "rationale": "Synthetic test rationale.",
+            "caveat": "Descriptive shorthand only.",
+            "dimension_leans": {
+                "introversion": 60,
+                "extraversion": 30,
+                "intuition": 40,
+                "sensing": 60,
+                "thinking": 55,
+                "feeling": 45,
+                "judging": 70,
+                "perceiving": 30,
+            },
+        }
+        errors = []
+        validate_mbti_value(bad_mbti, "self.bad-mbti", errors)
+        if not any("introversion + extraversion must equal 100" in item for item in errors):
+            failures.append("self-test: invalid MBTI dimension pair was not rejected")
     return failures
 
 def main() -> int:
@@ -308,7 +433,7 @@ def main() -> int:
             print(f"- {item}")
         return 1
     print("Agent Identity Canon validation: PASS")
-    print("Validated null-first semantics, lifecycle/provenance, history, synthetic examples, references, and public-safety patterns.")
+    print("Validated null-first semantics, lifecycle/provenance, post-canon personality frameworks, history, synthetic examples, references, and public-safety patterns.")
     return 0
 
 if __name__ == "__main__":

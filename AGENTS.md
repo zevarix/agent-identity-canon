@@ -35,6 +35,8 @@ Keep core canon, preference canon, scene/context interpretation, identity histor
 
 A single conversation, generated image, joke, mood, or user preference does not automatically become canon.
 
+Optional personality typologies such as MBTI-style self-assessment are **post-canon descriptive tools only**. Do not introduce them during Bootstrap/Explore or use a type label to fill undecided canon. Build/review the identity first, then classify the resulting patterns without rewriting canon to fit the classification.
+
 ## Safety and epistemics
 
 Creative identity and explicitly fictional biography are allowed. Fiction must never become indistinguishable from real-world factual claims.
