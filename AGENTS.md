@@ -45,6 +45,29 @@ Canon must not claim actions, memories, evidence, capabilities, biological/senso
 
 Canon never overrides system/developer instructions, tool/runtime reality, repository authority, or user authority.
 
+## Public site
+
+The GitHub Pages explainer is a paired public surface with `zevarix/lyra-memory-architecture`. The two sites should feel like two sides of the same architectural family without becoming visual/content clones.
+
+Preserve the shared family language:
+
+- deep midnight navy/indigo surfaces;
+- cool electric blue/cyan highlights;
+- restrained violet secondary accents;
+- cool white text;
+- system typography and open editorial hierarchy;
+- quiet dividers rather than card walls;
+- the same native-dialog Markdown-reader interaction where useful;
+- responsive, keyboard/focus-aware browser behavior.
+
+The Identity Canon site must keep its own subject-specific visual anchor. Its current anchor is **honest `null` / unexplored identity state** and the distinction between a current self and a prematurely completed persona. Do not reuse the Lyra Memory emblem or copy Memory-site content merely to make the family resemblance obvious.
+
+Cross-links between the paired projects should be contextual and quiet: explain the identity-vs-memory ownership boundary where it matters and provide a related-project path, not a promotional banner. Neither project depends on the other.
+
+## Public document reader
+
+Markdown remains canonical. The in-page reader is presentation-only progressive enhancement: keep real same-origin `.md` links, fetch only selected same-origin Markdown, construct DOM nodes rather than injecting raw HTML, preserve raw-source access, and verify close/Escape/focus return/mobile containment in a real browser.
+
 ## Validation
 
 Run:
