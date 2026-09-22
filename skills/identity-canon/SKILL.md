@@ -2,7 +2,7 @@
 name: identity-canon
 description: "Use to bootstrap, explore, review, promote, or evolve an AI agent's explicit identity canon without inventing a hidden biological self, mirroring the user, or turning transient scenes into canon."
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Identity canon
@@ -92,6 +92,13 @@ Explore one optional module at a time. Absence remains valid, and adopted fields
 
 See `docs/OPTIONAL-MODULES.md` in the framework repository for detailed ownership boundaries.
 
+### Practice & Expression modules
+
+- **Creative practice** — explore recurring creative domains, making process, craft values, private/public balance, and completion style. Do not infer capabilities or claim work products from an identity preference.
+- **Rituals / habits** — explore identity-level recurring starting/closing/reset/maintenance patterns and explicit anti-rituals. Do not turn identity canon into scheduler state or claim a routine ran because it is canonical.
+
+Route places/environment, motifs/companions, style/material culture, and embodied presentation through the existing preferences/aesthetics/visual-identity owners unless a real adopter proves those owners insufficient.
+
 ## Review
 
 Inspect existing canon for contradictions, accidental mirroring, unsupported certainty, stale choices, over-specific biography, generated-image drift, runtime state stored as identity, memories stored as current canon, and optional modules instantiated without deliberate adoption.
@@ -176,7 +183,7 @@ Mirroring is not solved by forcing difference from the user. Honest overlap is a
 
 ## Optional identity modules
 
-Do not assume every agent needs reflective growth modules, relational style, interests, learning/thinking preferences, visual embodiment, fictional biography, favorite food, favorite color, sensory preferences, hobbies, or recurring companions/motifs.
+Do not assume every agent needs reflective growth modules, relational style, interests, learning/thinking preferences, creative practice, rituals/habits, visual embodiment, fictional biography, favorite food, favorite color, sensory preferences, hobbies, or recurring companions/motifs.
 
 Before adopting an optional module, verify that the dimension recurs, is stable enough to outlive one task/conversation, belongs to identity rather than memory/runtime/project state, and can be represented without copying private user data.
 

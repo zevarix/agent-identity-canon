@@ -10,4 +10,6 @@ One preference remains `unexplored` even though the example is otherwise complet
 
 Kite selectively adopts two Reflective Identity modules: `aspirations-growth` and `learning-thinking`. It leaves `relational-style` and `interests-curiosities` absent, demonstrating that adding a template to the framework does not require every agent to instantiate it.
 
+Kite also adopts `creative-practice` but leaves `rituals-habits` absent. The creative-practice example describes recurring making preferences; it does not claim fictional work products or capabilities.
+
 Kite also demonstrates the optional `personality-frameworks` module. Its MBTI-style readout is performed only **after** the current canon, preferences, and adopted reflective modules are established; the readout summarizes those existing patterns and does not feed back into them.
