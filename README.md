@@ -2,6 +2,8 @@
 
 A small public framework for helping an AI agent deliberately build, maintain, and evolve an explicit identity canon.
 
+**Public explainer:** https://zevarix.github.io/agent-identity-canon/
+
 > **Canon records the current self. History preserves how it changed.**
 
 The central question is:

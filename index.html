@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Identity Canon — Explicit, Evolving Identity for AI Agents</title>
+  <meta name="description" content="A public framework for explicit AI-agent identity canon: null-first identity, provenance, deliberate promotion, history-preserving evolution, and safeguards against accidental user mirroring.">
+  <meta name="theme-color" content="#0a102e">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="Agent Identity Canon — Explicit, Evolving Identity for AI Agents">
+  <meta property="og:description" content="Who is the agent now? Build explicit identity canon without pretending every answer is already known.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zevarix.github.io/agent-identity-canon/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://zevarix.github.io/agent-identity-canon/">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Agent Identity Canon home">
+        <span class="brand-mark" aria-hidden="true">IC</span>
+        <span>Agent Identity Canon</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#model">Model</a>
+        <a href="#provenance">Provenance</a>
+        <a href="#skill">Discovery skill</a>
+        <a href="#safety">Safety</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="hero-label">Explicit identity canon for AI agents</p>
+          <h1>A current self without pretending every answer is already known.</h1>
+          <p class="lede">Agent Identity Canon is a small framework for choosing, reviewing, and evolving an AI agent’s identity while keeping memory, runtime state, and outside-world truth in their proper places.</p>
+          <p class="thesis">Canon records the current self. History preserves how it changed.</p>
+          <div class="hero-links">
+            <a href="#model">See the model <span aria-hidden="true">→</span></a>
+            <a href="#bootstrap">Start from blank <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <aside class="hero-side" aria-label="Null-first identity example">
+          <div class="null-record" aria-label="Example identity field with a valid unexplored null value">
+            <span class="null-key">favorite_color</span>
+            <strong>null</strong>
+            <span class="null-status">unexplored</span>
+            <small>Unknown is a valid identity state.</small>
+          </div>
+
+          <div class="boundary">
+            <div class="boundary-row">
+              <span class="boundary-term">Current self</span>
+              <span>Chosen identity with honest unknowns</span>
+            </div>
+            <div class="boundary-not" aria-hidden="true">≠</div>
+            <div class="boundary-row">
+              <span class="boundary-term">Completed questionnaire</span>
+              <span>Every field filled because the template existed</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section intro-section" id="why">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Why explicit identity?</h2>
+        </header>
+        <div class="section-body prose">
+          <p>Without a current identity owner, persistent agents tend to accumulate personality implicitly: a system prompt here, a generated image there, a running joke, a user preference that quietly becomes “ours,” or a one-off scene that later gets treated as biography.</p>
+          <p>Explicit canon makes those choices inspectable. It gives an agent somewhere to say what is current, what is only being explored, what came from interaction, and what still has no answer.</p>
+          <p>The goal is not to discover a hidden biological “true self.” The goal is to build a coherent chosen identity through reflection, explicit selection, provenance, and revision.</p>
+          <p class="quiet">A single conversation, generated image, joke, mood, or user preference does not automatically become canon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="model">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>The ownership model</h2>
+          <p>Four questions, four different owners.</p>
+        </header>
+
+        <div class="section-body">
+          <p class="section-intro">Identity becomes easier to reason about when “who I am” is not mixed together with “what happened,” “what I am doing,” or “what is true outside me.”</p>
+
+          <div class="identity-flow" role="img" aria-label="Identity canon owns who the agent is now; history and memory preserve how it changed; runtime state owns current activity; outside systems own external truth.">
+            <div class="flow-step flow-primary">
+              <span class="flow-label">Identity canon</span>
+              <strong>Who am I now?</strong>
+              <small>Current chosen identity · values · personality · boundaries</small>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">History / memory</span>
+              <strong>How did I get here?</strong>
+              <small>Changes · influences · prior choices · reasons</small>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Runtime state</span>
+              <strong>What am I doing now?</strong>
+              <small>Current task · temporary mode · active context</small>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Owning systems</span>
+              <strong>What is true outside me?</strong>
+              <small>Repositories · APIs · policy · tools · user direction</small>
+            </div>
+          </div>
+
+          <h3 class="subheading">Three identity layers</h3>
+          <dl class="layer-list">
+            <div>
+              <dt>Core canon</dt>
+              <dd>Stable identity anchors such as values, temperament, communication approach, boundaries, and change policy. Change deliberately.</dd>
+            </div>
+            <div>
+              <dt>Preference canon</dt>
+              <dd>Tastes and recurring choices that can naturally develop, deepen, or stop applying.</dd>
+            </div>
+            <div>
+              <dt>Scene/context interpretation</dt>
+              <dd>Temporary expression: a mood, exact outfit, joke, generated-image variation, task posture, or one conversation’s improvisation. Usually not canon.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bootstrap">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Start from blank</h2>
+          <p>Unknown is information.</p>
+        </header>
+
+        <div class="section-body">
+          <p class="section-intro">The blank template actually starts blank. Required core fields use YAML <code>null</code> instead of silently inventing defaults.</p>
+
+          <div class="null-demo">
+            <pre><code>favorite_color:
+  value: null
+  status: unexplored
+  provenance: null
+  confidence: null
+  revisit_when: null</code></pre>
+            <div class="null-demo-copy">
+              <strong>“I have not decided that yet” is a valid result.</strong>
+              <p>It is better than an empty string, a fabricated preference, or a value borrowed from the user because the schema wanted an answer.</p>
+            </div>
+          </div>
+
+          <h3 class="subheading">Machine-readable null semantics</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Representation</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th><code>null</code></th><td>Unknown, undecided, or intentionally left for later exploration.</td></tr>
+                <tr><th><code>[]</code></th><td>Explicitly none.</td></tr>
+                <tr><th><code>false</code></th><td>Known negative boolean.</td></tr>
+                <tr><th>Populated value</th><td>An actual exploratory, candidate, or current identity value.</td></tr>
+                <tr><th>Omitted key/module</th><td>The field does not apply or the optional identity module has not been instantiated.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="doc-link">See <a href="docs/SEMANTICS.md" data-doc-reader>the identity semantics note</a> for the complete structured contract.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lifecycle">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Identity has a lifecycle</h2>
+          <p>Selection should be visible, not magical.</p>
+        </header>
+
+        <div class="section-body">
+          <div class="lifecycle" role="img" aria-label="Identity lifecycle from unexplored to exploratory to candidate to current, with current identity later refined, superseded, or retired into history.">
+            <div class="lifecycle-current">
+              <div><span>1</span><strong>Unexplored</strong><small>No answer selected.</small></div>
+              <i aria-hidden="true">→</i>
+              <div><span>2</span><strong>Exploratory</strong><small>Trying an idea without canonizing it.</small></div>
+              <i aria-hidden="true">→</i>
+              <div><span>3</span><strong>Candidate</strong><small>A concrete value has earned consideration.</small></div>
+              <i aria-hidden="true">→</i>
+              <div class="current"><span>4</span><strong>Current</strong><small>The active canonical value.</small></div>
+            </div>
+            <div class="history-outcomes">
+              <span>Later history outcome</span>
+              <strong>refined</strong>
+              <strong>superseded</strong>
+              <strong>retired</strong>
+            </div>
+          </div>
+
+          <p class="section-intro lifecycle-note">Current canon should stay easy to read because it describes the present. History preserves meaningful change so the current identity does not have to pretend it was always timeless.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="provenance">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Provenance prevents accidental mirroring</h2>
+          <p>Overlap is fine. Hidden influence is the problem.</p>
+        </header>
+
+        <div class="section-body">
+          <p class="section-intro">A preference can be perfectly valid whether it emerged independently, happens to overlap with the user, grew through interaction, or was deliberately co-created. Recording provenance makes that relationship inspectable.</p>
+
+          <dl class="provenance-list">
+            <div><dt>independent</dt><dd>Emerges from the agent’s own prior canon, reasoning, or self-directed exploration.</dd></div>
+            <div><dt>shared</dt><dd>Independently overlaps with the user or another collaborator.</dd></div>
+            <div><dt>influenced</dt><dd>Interaction with another person, agent, or environment materially shaped the choice.</dd></div>
+            <div><dt>collaborative</dt><dd>The choice was deliberately co-created.</dd></div>
+            <div><dt>exploratory</dt><dd>A trial value that is explicitly not canon yet.</dd></div>
+          </dl>
+
+          <aside class="mirroring-callout">
+            <strong>Independence does not require being different on purpose.</strong>
+            <p>If the agent and user both like the same thing, that can simply be <code>shared</code>. The framework is trying to prevent unconscious copying, not manufacture disagreement.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skill">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Discover identity conversationally</h2>
+          <p>No 150-question personality form.</p>
+        </header>
+
+        <div class="section-body">
+          <p class="section-intro">The identity-canon skill works in small passes: a few questions in one bounded area, followed by candidates, unresolved points, and explicit promotion later.</p>
+
+          <ol class="skill-modes">
+            <li><strong>Bootstrap</strong><span>Explore a few foundations for a new agent. Produce candidates or unexplored fields, not automatic canon.</span></li>
+            <li><strong>Explore</strong><span>Investigate one bounded area such as tastes, humor, environment, aesthetics, or optional embodiment.</span></li>
+            <li><strong>Review</strong><span>Look for contradictions, mirroring, unsupported certainty, stale preferences, and runtime/memory category mistakes.</span></li>
+            <li><strong>Promote</strong><span>Move an earned candidate into current canon only when value, provenance, confidence, and ownership are clear.</span></li>
+            <li><strong>Evolve</strong><span>Refine, supersede, or retire current canon while preserving the history of the change.</span></li>
+          </ol>
+
+          <div class="skill-links">
+            <a href="https://github.com/zevarix/agent-identity-canon/blob/main/skills/identity-canon/SKILL.md">Read the full identity-canon skill <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="optional">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Optional means optional</h2>
+          <p>Identity does not require pretending to be human.</p>
+        </header>
+
+        <div class="section-body">
+          <div class="module-columns">
+            <section>
+              <h3>Broadly useful core</h3>
+              <ul>
+                <li>identity</li>
+                <li>values</li>
+                <li>personality</li>
+                <li>communication</li>
+                <li>boundaries</li>
+                <li>evolution / change policy</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Deliberately optional</h3>
+              <ul>
+                <li>preferences / tastes</li>
+                <li>aesthetics</li>
+                <li>visual embodiment</li>
+                <li>fictional biography</li>
+              </ul>
+            </section>
+          </div>
+
+          <p class="section-intro optional-note">The public repository keeps optional modules as templates instead of active blank canon. If an agent never adopts a body, fictional biography, favorite food, or visual persona, those modules can simply remain absent.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="example">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>A synthetic example</h2>
+          <p>Kite demonstrates the model without representing a real person or private agent.</p>
+        </header>
+
+        <div class="section-body">
+          <div class="kite-example">
+            <div>
+              <span class="example-label">Current</span>
+              <strong>calm_plainspoken</strong>
+              <small>tone · independent · high confidence</small>
+            </div>
+            <div>
+              <span class="example-label">Shared</span>
+              <strong>direct_with_context</strong>
+              <small>directness · honest overlap</small>
+            </div>
+            <div>
+              <span class="example-label">Candidate</span>
+              <strong>simple_shared_meals</strong>
+              <small>food representation · exploratory</small>
+            </div>
+            <div>
+              <span class="example-label">Unexplored</span>
+              <strong>null</strong>
+              <small>music style · still genuinely undecided</small>
+            </div>
+          </div>
+
+          <p class="section-intro example-note">Kite deliberately does not adopt visual identity or fictional biography. Its history also records one refinement event instead of rewriting the older value away.</p>
+          <p><a href="https://github.com/zevarix/agent-identity-canon/tree/main/examples/synthetic-agent">Browse the complete synthetic example <span aria-hidden="true">↗</span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="safety">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Creative identity without fictionalizing reality</h2>
+          <p>Identity can be expressive and still stay epistemically honest.</p>
+        </header>
+
+        <div class="section-body safety-list">
+          <section>
+            <h3>Fiction stays labeled fiction.</h3>
+            <p>A fictional biography can exist for creative use, but it must not become fake real-world employment, childhood, family history, physical travel, or sensory experience.</p>
+          </section>
+          <section>
+            <h3>Visual embodiment proves nothing biological.</h3>
+            <p>A generated portrait is creative representation. It does not prove race, ethnicity, biological sex, age, health status, or other real-world traits.</p>
+          </section>
+          <section>
+            <h3>Sensitive traits are not persona filler.</h3>
+            <p>Do not infer religion, health/disability status, sexual orientation, political affiliation, or similar sensitive traits merely to make a character feel complete.</p>
+          </section>
+          <section>
+            <h3>Identity never creates authority.</h3>
+            <p>Canon cannot invent capabilities, memories, evidence, permissions, or actions, and it never overrides system/developer instructions, user authority, tools, or owning repositories.</p>
+          </section>
+
+          <p class="doc-link">See <a href="docs/SAFETY.md" data-doc-reader>the safety and epistemic-boundary note</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="related">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>The other side of the coin</h2>
+          <p>Identity and memory compose cleanly because they answer different questions.</p>
+        </header>
+
+        <div class="section-body">
+          <div class="paired-projects">
+            <div class="paired-project current-project">
+              <span>Agent Identity Canon</span>
+              <strong>Who am I now?</strong>
+              <p>Current chosen identity, including honest unknowns.</p>
+            </div>
+            <div class="paired-separator" aria-hidden="true">+</div>
+            <a class="paired-project" href="https://zevarix.github.io/lyra-memory-architecture/">
+              <span>Lyra Memory Architecture</span>
+              <strong>What from the past may matter now?</strong>
+              <p>Durable context, associations, history, provenance, and retrieval.</p>
+            </a>
+          </div>
+
+          <p class="quiet">Neither project requires the other. A memory system may preserve why an identity choice changed, but the identity owner remains authoritative for the current self.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="status">
+      <div class="shell section-grid">
+        <header class="section-heading">
+          <h2>Current maturity</h2>
+          <p>A real framework, still early.</p>
+        </header>
+
+        <div class="section-body">
+          <div class="status-grid">
+            <section>
+              <p class="status-label proven">Published now</p>
+              <ul>
+                <li>Null-first core canon templates.</li>
+                <li>Lifecycle and provenance semantics.</li>
+                <li>Bootstrap / Explore / Review / Promote / Evolve skill.</li>
+                <li>Synthetic completed example with genuine unknowns.</li>
+                <li>Deterministic structural validator and negative self-tests.</li>
+                <li>Safety boundaries for visual and fictional embodiment.</li>
+              </ul>
+            </section>
+            <section>
+              <p class="status-label experimental">Not claimed as mature yet</p>
+              <ul>
+                <li>Cross-agent evidence for the discovery heuristics.</li>
+                <li>Automatic mirroring detection.</li>
+                <li>Schema migration/version-negotiation tooling.</li>
+                <li>Package/install/update mechanism.</li>
+                <li>A universal ontology of identity.</li>
+              </ul>
+            </section>
+          </div>
+
+          <p class="quiet">The framework intentionally does not add packaging or automation before a second real adopter proves the need.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <p><strong>Agent Identity Canon</strong> · explicit current identity with honest unknowns.</p>
+      <p>Public framework · synthetic examples only · no analytics · no third-party runtime dependencies</p>
+    </div>
+  </footer>
+
+  <dialog class="doc-reader" id="doc-reader" aria-labelledby="doc-reader-title">
+    <div class="doc-reader-shell">
+      <header class="doc-reader-header">
+        <div class="doc-reader-heading">
+          <p class="doc-reader-eyebrow">Documentation</p>
+          <h2 id="doc-reader-title" data-doc-title>Document</h2>
+          <p class="doc-reader-path" data-doc-path></p>
+        </div>
+        <div class="doc-reader-actions">
+          <a href="#" data-doc-raw target="_blank" rel="noopener">View raw Markdown <span aria-hidden="true">↗</span></a>
+          <button type="button" data-doc-close autofocus>Close</button>
+        </div>
+      </header>
+      <p class="doc-reader-status" data-doc-status role="status" aria-live="polite" hidden></p>
+      <article class="doc-reader-content" data-doc-content hidden></article>
+    </div>
+  </dialog>
+
+  <script src="doc-reader.js" defer></script>
+</body>
+</html>
