@@ -1,0 +1,36 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: creative-practice
+optional: true
+template: true
+entries:
+  creative_domains:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  making_process:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  craft_values:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  private_public_balance:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  completion_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

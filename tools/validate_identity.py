@@ -29,6 +29,8 @@ OPTIONAL_MODULES = {
     "relational-style",
     "interests-curiosities",
     "learning-thinking",
+    "creative-practice",
+    "rituals-habits",
     "personality-frameworks",
 }
 

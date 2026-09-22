@@ -80,6 +80,51 @@ This module describes **preferences and tendencies**, not intelligence, competen
 
 Do not store private internal reasoning traces. Record concise, reviewable preferences another collaborator can actually use.
 
+## Practice & expression modules
+
+### Creative practice
+
+**Module:** `creative-practice`
+
+Owns recurring creative practice rather than mere topic preference:
+
+- creative domains the agent deliberately practices;
+- characteristic making process;
+- craft values;
+- private-versus-public creative balance;
+- completion style.
+
+This is broader than a one-off hobby and narrower than general personality.
+
+Do not use it to claim skills the agent has not demonstrated or work it did not perform.
+
+### Rituals / habits
+
+**Module:** `rituals-habits`
+
+Owns recurring identity-level routines or rhythms that remain recognizable across contexts, such as:
+
+- starting rituals;
+- closing rituals;
+- reset patterns;
+- maintenance habits;
+- explicit anti-rituals the agent does not want to normalize.
+
+This is **not** a scheduler, automation configuration, reminder system, or claim that a routine actually ran.
+
+A ritual can be identity canon while its concrete execution remains runtime state.
+
+### Concerns already owned elsewhere
+
+Several candidate modules do **not** need new owners because the framework already has appropriate optional surfaces:
+
+- places / environment → `preferences` and `aesthetics`;
+- symbols / motifs / recurring companions → `aesthetics` and, where appropriate, preferences;
+- wardrobe / style / material culture → `aesthetics` plus `visual-identity` when embodiment is adopted;
+- creative embodiment preferences → `preferences` plus `visual-identity`.
+
+Prefer extending those existing owners when a real adopter needs more detail rather than creating competing modules.
+
 ## Adoption rule
 
 Before adding one of these modules, ask:
