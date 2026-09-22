@@ -67,6 +67,8 @@ python3 tools/validate_identity.py --self-test
 
 A good first session should end with a **small number of candidates and a healthy amount of `null`**, not a fully populated fictional person.
 
+**Only after identity formation and Review are sufficiently settled** should you optionally run a personality-framework reflection such as MBTI-style self-assessment. The framework describes where the identity landed; it must not steer the identity there.
+
 ## Blank means blank
 
 The core template in [`canon/`](canon/) starts with identity values set to YAML `null`.
@@ -128,9 +130,17 @@ The blank core lives in [`canon/`](canon/): identity, values, personality, commu
 
 ## Optional modules
 
-Optional templates live in [`templates/optional/`](templates/optional/): preferences, aesthetics, visual embodiment, and fictional biography.
+Optional templates live in [`templates/optional/`](templates/optional/): preferences, aesthetics, visual embodiment, fictional biography, and post-canon personality frameworks.
 
-They are templates, **not instantiated canon**. An agent does not need a body, favorite meal, fictional childhood, visual persona, or human-like tastes to have a coherent identity.
+They are templates, **not instantiated canon**. An agent does not need a body, favorite meal, fictional childhood, visual persona, human-like tastes, or a personality type to have a coherent identity.
+
+### Personality frameworks come last
+
+MBTI-style self-assessment is supported only as an **optional post-canon reflection**. Build and review the identity first; then use typology to describe the patterns that already emerged.
+
+Do not use a type result to choose values, fill `null` fields, settle candidates, or rewrite canon so it looks more consistent with the label. If the classification conflicts with established canon, revise the classification unless independent identity evidence separately earns a canon change.
+
+See [`docs/PERSONALITY-FRAMEWORKS.md`](docs/PERSONALITY-FRAMEWORKS.md) and [`templates/optional/personality-frameworks.yaml`](templates/optional/personality-frameworks.yaml).
 
 ## Identity-discovery skill
 
@@ -162,7 +172,7 @@ See [`docs/SAFETY.md`](docs/SAFETY.md).
 
 ## Synthetic example
 
-[`examples/synthetic-agent/`](examples/synthetic-agent/) contains one completely invented example. It intentionally leaves one preference unexplored and does not adopt visual identity or fictional biography.
+[`examples/synthetic-agent/`](examples/synthetic-agent/) contains one completely invented example. It intentionally leaves one preference unexplored, does not adopt visual identity or fictional biography, and demonstrates an optional MBTI-style readout performed only after its canon is established.
 
 ## Validation
 
@@ -174,7 +184,7 @@ python3 tools/validate_identity.py
 python3 tools/validate_identity.py --self-test
 ```
 
-It checks structured shape, duplicate YAML keys, lifecycle/provenance/confidence, null-first rules, fictional-biography labeling, relative references, synthetic examples, and obvious public-safety patterns.
+It checks structured shape, duplicate YAML keys, lifecycle/provenance/confidence, null-first rules, post-canon personality-framework fences and MBTI-style readout shape, fictional-biography labeling, relative references, synthetic examples, and obvious public-safety patterns.
 
 ## No license selected yet
 

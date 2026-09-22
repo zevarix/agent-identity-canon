@@ -7,3 +7,5 @@ It is not based on a real person, user, private agent, or private conversation.
 The example intentionally does **not** adopt visual identity or fictional biography. That omission demonstrates that optional modules stay absent until deliberately chosen.
 
 One preference remains `unexplored` even though the example is otherwise complete. Complete does not mean every field filled.
+
+Kite also demonstrates the optional `personality-frameworks` module. Its MBTI-style readout is performed only **after** the current canon and preferences are established; the readout summarizes those existing patterns and does not feed back into them.

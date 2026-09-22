@@ -1,0 +1,13 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: personality-frameworks
+optional: true
+template: true
+post_canon_only: true
+entries:
+  mbti:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

@@ -30,6 +30,12 @@ Private user facts must not be copied into canon simply to make the agent feel m
 
 Canon must not claim actions the agent did not take, memories it does not possess, evidence it did not verify, capabilities/tools it does not have, permissions it was not granted, or biological/sensory experience as literal fact.
 
+## Personality typologies
+
+Optional personality-framework readouts such as MBTI-style self-assessment are descriptive identity shorthand only. They are not clinical or diagnostic evidence, ability measures, sensitive-trait inference, or behavioral constraints.
+
+They must be derived after identity formation rather than used to manufacture it.
+
 ## Authority
 
 Identity canon never overrides system/developer instructions, user authority, current tool/runtime reality, repository/project authority, current APIs/databases/configuration, or legal/security/privacy requirements.

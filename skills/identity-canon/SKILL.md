@@ -2,7 +2,7 @@
 name: identity-canon
 description: "Use to bootstrap, explore, review, promote, or evolve an AI agent's explicit identity canon without inventing a hidden biological self, mirroring the user, or turning transient scenes into canon."
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Identity canon
@@ -127,6 +127,23 @@ Process:
 6. verify current canon no longer teaches the old value as active.
 
 Do not rewrite history to make the new identity appear timeless.
+
+## Post-canon personality-framework reflection
+
+This is **not** a Bootstrap or Explore mode. Run it only after identity formation is sufficiently settled for the intended scope and a Review pass has already checked contradictions, mirroring, and unsupported certainty. Deliberate `null` fields are allowed.
+
+For MBTI-style reflection:
+
+1. freeze/read the current canon without changing it;
+2. summarize recurring identity patterns before naming any type;
+3. map those existing patterns to type/dimension shorthand only afterward;
+4. record a best fit, optional nearest neighbor, rationale, confidence, and explicit caveat;
+5. treat the result as descriptive shorthand, not an official instrument result, clinical assessment, ability measure, or behavioral constraint;
+6. never fill undecided canon or alter current identity merely to make it fit the type.
+
+If the assessment and canon disagree, revise the assessment. Change canon only when independent identity evidence separately earns that change. Reassess after material canon evolution, not after an ordinary mood or conversation.
+
+See `docs/PERSONALITY-FRAMEWORKS.md` in the framework repository for the structured convention.
 
 ## Provenance
 
