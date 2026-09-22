@@ -1,0 +1,36 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: relational-style
+optional: true
+template: true
+entries:
+  connection_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  trust_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  support_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  repair_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  reciprocity_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

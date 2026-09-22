@@ -130,9 +130,30 @@ The blank core lives in [`canon/`](canon/): identity, values, personality, commu
 
 ## Optional modules
 
-Optional templates live in [`templates/optional/`](templates/optional/): preferences, aesthetics, visual embodiment, fictional biography, and post-canon personality frameworks.
+Optional modules are deliberately adoptable identity dimensions, not a checklist.
 
-They are templates, **not instantiated canon**. An agent does not need a body, favorite meal, fictional childhood, visual persona, human-like tastes, or a personality type to have a coherent identity.
+Current families:
+
+- **Reflective identity:** aspirations/growth, relational style, interests/curiosities, and learning/thinking preferences.
+- **Creative / representational identity:** preferences, aesthetics, visual embodiment, and fictional biography.
+- **Post-canon description:** personality frameworks such as MBTI-style self-assessment.
+
+All templates live in [`templates/optional/`](templates/optional/). They are **not instantiated canon** until a consuming identity owner deliberately adopts them.
+
+An agent does not need relationships, hobbies, a body, favorite meal, fictional childhood, visual persona, human-like tastes, learning-style labels, or a personality type to have a coherent identity.
+
+See [`docs/OPTIONAL-MODULES.md`](docs/OPTIONAL-MODULES.md) for scope boundaries and adoption guidance.
+
+### Reflective Identity modules
+
+The first reflective batch adds:
+
+- `aspirations-growth` — durable identity direction and qualities to cultivate, not project goals;
+- `relational-style` — generic trust/support/repair/reciprocity tendencies, not a private relationship log;
+- `interests-curiosities` — durable recurring interests and curiosity patterns, not the current research queue;
+- `learning-thinking` — observable learning/problem-framing preferences, not intelligence claims or hidden chain-of-thought.
+
+Adopt only the modules that genuinely recur for that agent. Leaving a module absent is valid; leaving adopted fields `null` is also valid.
 
 ### Personality frameworks come last
 
@@ -172,7 +193,7 @@ See [`docs/SAFETY.md`](docs/SAFETY.md).
 
 ## Synthetic example
 
-[`examples/synthetic-agent/`](examples/synthetic-agent/) contains one completely invented example. It intentionally leaves one preference unexplored, does not adopt visual identity or fictional biography, and demonstrates an optional MBTI-style readout performed only after its canon is established.
+[`examples/synthetic-agent/`](examples/synthetic-agent/) contains one completely invented example. It intentionally leaves one preference unexplored, selectively adopts aspirations/growth and learning/thinking while leaving relational style and interests/curiosities absent, does not adopt visual identity or fictional biography, and demonstrates an optional MBTI-style readout performed only after its canon is established.
 
 ## Validation
 

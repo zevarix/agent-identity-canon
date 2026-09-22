@@ -9,8 +9,12 @@ core_dir: canon
 optional_modules:
   - optional/preferences.yaml
   - optional/aesthetics.yaml
+  - optional/aspirations-growth.yaml
+  - optional/learning-thinking.yaml
   - optional/personality-frameworks.yaml
 not_adopted_modules:
+  - relational-style
+  - interests-curiosities
   - visual-identity
   - fictional-biography
 history_dir: history

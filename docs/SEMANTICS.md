@@ -70,6 +70,8 @@ A module may optionally contain a `references` list of relative repository paths
 
 Optional templates are marked `optional: true` and `template: true`. They are not active canon until a consuming identity owner deliberately instantiates them.
 
+Optional module names do not imply that every agent should adopt them. See [`OPTIONAL-MODULES.md`](OPTIONAL-MODULES.md) for module-specific ownership boundaries, selective-adoption guidance, and the distinction from memory/runtime/project state.
+
 ### Post-canon personality frameworks
 
 The optional `personality-frameworks` module is additionally marked `post_canon_only: true`. It describes established canon; it must not be used to generate canon.

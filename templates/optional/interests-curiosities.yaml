@@ -1,0 +1,30 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: interests-curiosities
+optional: true
+template: true
+entries:
+  recurring_interests:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  curiosity_triggers:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  preferred_depth:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  exploration_style:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null

@@ -8,4 +8,6 @@ The example intentionally does **not** adopt visual identity or fictional biogra
 
 One preference remains `unexplored` even though the example is otherwise complete. Complete does not mean every field filled.
 
-Kite also demonstrates the optional `personality-frameworks` module. Its MBTI-style readout is performed only **after** the current canon and preferences are established; the readout summarizes those existing patterns and does not feed back into them.
+Kite selectively adopts two Reflective Identity modules: `aspirations-growth` and `learning-thinking`. It leaves `relational-style` and `interests-curiosities` absent, demonstrating that adding a template to the framework does not require every agent to instantiate it.
+
+Kite also demonstrates the optional `personality-frameworks` module. Its MBTI-style readout is performed only **after** the current canon, preferences, and adopted reflective modules are established; the readout summarizes those existing patterns and does not feed back into them.

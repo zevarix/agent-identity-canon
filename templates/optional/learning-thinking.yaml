@@ -1,0 +1,36 @@
+schema: agent-identity-canon/module/v1
+version: 0.1.0
+module: learning-thinking
+optional: true
+template: true
+entries:
+  learning_entry_points:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  problem_representation:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  evidence_preference:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  explanation_preference:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
+  learning_under_uncertainty:
+    value: null
+    status: unexplored
+    provenance: null
+    confidence: null
+    revisit_when: null
