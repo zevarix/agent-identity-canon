@@ -23,7 +23,17 @@ That is intentionally different from long-term memory, runtime state, or outside
 
 A memory system may preserve why an identity choice changed. The identity canon still owns the **current** choice.
 
-For a complementary memory architecture, see the public [Lyra Memory Architecture](https://github.com/zevarix/lyra-memory-architecture). Neither project requires the other.
+## Pairing with Lyra Memory Architecture
+
+Identity Canon and [Lyra Memory Architecture](https://zevarix.github.io/lyra-memory-architecture/) can be used independently.
+
+- Use Identity Canon alone when the main need is a stable, inspectable current identity.
+- Use Lyra Memory alone when the main need is durable associative context and retrieval.
+- Use both when a long-lived agent should be able to evolve while preserving the history and influences that explain how its current identity developed.
+
+Pairing can keep the current self concise, preserve explainable identity change, improve continuity across context boundaries, and make influence/provenance easier to inspect without mixing memory, runtime state, or outside-world truth into canon.
+
+Neither project requires the other, and the pairing does not imply an automatic synchronization bridge. Memory may inform identity review, but current canon remains authoritative for who the agent is now.
 
 ## What identity canon is
 

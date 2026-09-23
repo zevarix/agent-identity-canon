@@ -68,6 +68,8 @@ The Identity Canon site must keep its own subject-specific visual anchor. Its cu
 
 Cross-links between the paired projects should be contextual and quiet: explain the identity-vs-memory ownership boundary where it matters and provide a related-project path, not a promotional banner. Neither project depends on the other.
 
+When explaining paired use, make the benefit concrete without collapsing ownership: Identity Canon keeps the current self concise; Lyra Memory can preserve durable context, provenance, and the history that explains how identity changed. Pairing may improve continuity and explainability, but must never imply automatic synchronization, memory-to-canon writeback, or that retrieved context can override current canon.
+
 For readability, organize the public explainer around **reader jobs**, not one top-level section per schema concept. Prefer a small number of major editorial sections with related concepts grouped under meaningful subheads. Preserve useful deep anchors when consolidating content. The current reading arc is:
 
 1. why explicit identity matters;
