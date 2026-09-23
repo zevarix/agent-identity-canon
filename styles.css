@@ -1001,6 +1001,21 @@ tbody td {
   margin: 1.25rem 0 0;
 }
 
+.paired-benefits-heading {
+  margin-top: 3rem;
+}
+
+.pair-intro {
+  max-width: 780px;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.pair-benefits {
+  max-width: 920px;
+}
+
 footer {
   border-top: 1px solid var(--line);
   padding: 2.5rem 0 3rem;
