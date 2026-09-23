@@ -87,6 +87,8 @@ Markdown remains canonical. The in-page reader is presentation-only progressive 
 
 Opt human-facing skill Markdown into the reader deliberately rather than intercepting every `.md` link. YAML frontmatter is machine metadata, not article prose: the formatted view may summarize safe fields such as skill name/version while the raw view remains exact. Fenced code stays literal code content; when a fence declares a language, the reader may show that language as presentation metadata without adding a syntax-highlighting dependency.
 
+The GitHub Pages surface is intentionally static and must preserve canonical Markdown at its literal `.md` path. Keep the root `.nojekyll` marker so frontmatter-bearing skill files are served byte-for-byte instead of being transformed into Jekyll-generated HTML.
+
 ## Validation
 
 Run:
