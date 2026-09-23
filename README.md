@@ -246,7 +246,7 @@ python3 tools/validate_identity.py
 python3 tools/validate_identity.py --self-test
 ```
 
-It checks structured shape, duplicate YAML keys, lifecycle/provenance/confidence, null-first rules, post-canon personality-framework fences and MBTI-style readout shape, fictional-biography labeling, relative references, synthetic examples, and obvious public-safety patterns.
+It checks structured shape, duplicate YAML keys, lifecycle/provenance/confidence, external-assignment adoption evidence, null-first rules, post-canon personality-framework fences and MBTI-style readout shape, fictional-biography labeling, relative references, synthetic examples, and obvious public-safety patterns.
 
 ## No license selected yet
 
