@@ -108,7 +108,7 @@ def validate_adoption(record: dict[str, Any], label: str, errors: list[str]) -> 
     outcome = adoption.get("outcome")
     basis = adoption.get("basis")
 
-    if reviewed not in {True, False}:
+    if not isinstance(reviewed, bool):
         errors.append(f"{label}: adoption.reviewed must be true or false")
     if outcome not in {"adopted", "rejected", "deferred"}:
         errors.append(
