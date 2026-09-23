@@ -328,6 +328,7 @@ def validate_history(path: Path, root: Path, errors: list[str], template: bool =
             errors.append(f"{relative(path, root)}:{side}: invalid provenance {provenance!r}")
         if confidence is not None and confidence not in CONFIDENCE:
             errors.append(f"{relative(path, root)}:{side}: invalid confidence {confidence!r}")
+        validate_adoption(record, f"{relative(path, root)}:{side}", errors)
     validate_references(data, path, root, errors)
 
 def validate_examples(root: Path, errors: list[str]) -> None:
