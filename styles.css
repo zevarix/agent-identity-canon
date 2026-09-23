@@ -1145,6 +1145,15 @@ footer {
   margin-bottom: 0;
 }
 
+.doc-reader-meta {
+  margin: 0 0 1.6rem;
+  padding: 0 0 .85rem;
+  color: var(--quiet) !important;
+  border-bottom: 1px solid var(--line);
+  font: 650 .76rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .035em;
+}
+
 .doc-reader-content h2,
 .doc-reader-content h3,
 .doc-reader-content h4,
@@ -1211,6 +1220,22 @@ footer {
   background: #070b20;
   border: 1px solid var(--line);
   border-radius: 10px;
+}
+
+.doc-reader-content pre[data-language] {
+  position: relative;
+  padding-top: 2.35rem;
+}
+
+.doc-reader-content pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: .65rem;
+  right: .8rem;
+  color: var(--quiet);
+  font: 700 .68rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .07em;
+  text-transform: uppercase;
 }
 
 .doc-reader-content pre code {

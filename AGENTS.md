@@ -85,6 +85,8 @@ Do not re-fragment that arc merely because a new optional module or schema field
 
 Markdown remains canonical. The in-page reader is presentation-only progressive enhancement: keep real same-origin `.md` links, fetch only selected same-origin Markdown, construct DOM nodes rather than injecting raw HTML, preserve raw-source access, and verify close/Escape/focus return/mobile containment in a real browser.
 
+Opt human-facing skill Markdown into the reader deliberately rather than intercepting every `.md` link. YAML frontmatter is machine metadata, not article prose: the formatted view may summarize safe fields such as skill name/version while the raw view remains exact. Fenced code stays literal code content; when a fence declares a language, the reader may show that language as presentation metadata without adding a syntax-highlighting dependency.
+
 ## Validation
 
 Run:

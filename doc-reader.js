@@ -13,6 +13,93 @@
   const cache = new Map();
   let opener = null;
 
+  const stripFrontmatterQuotes = (value) => {
+    const trimmed = value.trim();
+
+    if (
+      (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+      (trimmed.startsWith("'") && trimmed.endsWith("'"))
+    ) {
+      return trimmed.slice(1, -1);
+    }
+
+    return trimmed;
+  };
+
+  const parseFrontmatter = (markdown) => {
+    const normalized = markdown.replace(/\r\n?/g, "\n");
+    const lines = normalized.split("\n");
+
+    if (lines[0]?.trim() !== "---") {
+      return { body: normalized, metadata: null };
+    }
+
+    const end = lines.findIndex(
+      (line, index) => index > 0 && line.trim() === "---"
+    );
+
+    if (end < 0) {
+      return { body: normalized, metadata: null };
+    }
+
+    const frontmatterLines = lines.slice(1, end);
+    if (!frontmatterLines.some((line) => /^name:\s*\S/.test(line))) {
+      return { body: normalized, metadata: null };
+    }
+
+    const metadata = {};
+    let section = null;
+
+    for (const rawLine of frontmatterLines) {
+      if (!rawLine.trim() || /^\s*#/.test(rawLine)) continue;
+
+      const match = rawLine.match(/^(\s*)([A-Za-z0-9_-]+):(?:\s*(.*))?$/);
+      if (!match) continue;
+
+      const indent = match[1].length;
+      const key = match[2];
+      const value = (match[3] ?? "").trim();
+
+      if (indent === 0) {
+        if (!value) {
+          section = key;
+          metadata[key] = {};
+        } else {
+          metadata[key] = stripFrontmatterQuotes(value);
+          section = null;
+        }
+        continue;
+      }
+
+      if (section && typeof metadata[section] === "object") {
+        metadata[section][key] = stripFrontmatterQuotes(value);
+      }
+    }
+
+    return {
+      body: lines.slice(end + 1).join("\n").replace(/^\n+/, ""),
+      metadata,
+    };
+  };
+
+  const renderFrontmatterMetadata = (metadata) => {
+    if (!metadata) return null;
+
+    const name = typeof metadata.name === "string" ? metadata.name : "";
+    const version =
+      typeof metadata.metadata?.version === "string"
+        ? metadata.metadata.version
+        : "";
+
+    const parts = ["Skill", name, version ? "v" + version : ""].filter(Boolean);
+    if (parts.length === 1) return null;
+
+    const meta = document.createElement("p");
+    meta.className = "doc-reader-meta";
+    meta.textContent = parts.join(" · ");
+    return meta;
+  };
+
   const blockStart = (line) =>
     /^(#{1,6})\s+/.test(line) ||
     /^\s*([-*+]\s+|\d+[.)]\s+)/.test(line) ||
@@ -110,7 +197,10 @@
 
   const renderMarkdown = (markdown) => {
     const fragment = document.createDocumentFragment();
-    const lines = markdown.replace(/\r\n?/g, "\n").split("\n");
+    const parsed = parseFrontmatter(markdown);
+    const lines = parsed.body.split("\n");
+    const metadataNode = renderFrontmatterMetadata(parsed.metadata);
+    if (metadataNode) fragment.append(metadataNode);
     let documentTitle = "";
     let index = 0;
 
@@ -137,7 +227,11 @@
 
         const pre = document.createElement("pre");
         const code = document.createElement("code");
-        if (language) code.dataset.language = language;
+        if (language) {
+          const normalizedLanguage = language.toLowerCase();
+          pre.dataset.language = normalizedLanguage;
+          code.dataset.language = normalizedLanguage;
+        }
         code.textContent = codeLines.join("\n");
         pre.append(code);
         fragment.append(pre);
