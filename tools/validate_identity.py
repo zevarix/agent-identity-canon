@@ -17,7 +17,7 @@ EXAMPLE_SCHEMA = "agent-identity-canon/example/v1"
 
 CURRENT_STATES = {"unexplored", "exploratory", "candidate", "current"}
 HISTORY_OUTCOMES = {"refined", "superseded", "retired"}
-PROVENANCE = {"independent", "shared", "influenced", "collaborative", "exploratory"}
+PROVENANCE = {"independent", "shared", "influenced", "collaborative", "exploratory", "externally_assigned"}
 CONFIDENCE = {"low", "medium", "high"}
 CORE_MODULES = {"identity", "values", "personality", "communication", "boundaries", "evolution"}
 OPTIONAL_MODULES = {
@@ -88,6 +88,52 @@ def find_empty_strings(value: Any, trail: str = "") -> list[str]:
             found.extend(find_empty_strings(item, f"{trail}[{index}]"))
     return found
 
+def validate_adoption(record: dict[str, Any], label: str, errors: list[str]) -> None:
+    provenance = record.get("provenance")
+    status = record.get("status")
+    adoption = record.get("adoption")
+
+    if adoption is None:
+        if provenance == "externally_assigned" and status == "current":
+            errors.append(
+                f"{label}: current externally_assigned value requires adoption evidence"
+            )
+        return
+
+    if not isinstance(adoption, dict):
+        errors.append(f"{label}: adoption must be null or a mapping")
+        return
+
+    reviewed = adoption.get("reviewed")
+    outcome = adoption.get("outcome")
+    basis = adoption.get("basis")
+
+    if reviewed not in {True, False}:
+        errors.append(f"{label}: adoption.reviewed must be true or false")
+    if outcome not in {"adopted", "rejected", "deferred"}:
+        errors.append(
+            f"{label}: adoption.outcome must be adopted/rejected/deferred"
+        )
+    if basis is not None and basis != "detached_identity_review":
+        errors.append(
+            f"{label}: adoption.basis must be null or 'detached_identity_review'"
+        )
+
+    if outcome == "adopted":
+        if reviewed is not True:
+            errors.append(f"{label}: adopted value requires adoption.reviewed = true")
+        if basis != "detached_identity_review":
+            errors.append(
+                f"{label}: adopted value requires detached_identity_review basis"
+            )
+
+    if provenance == "externally_assigned" and status == "current":
+        if reviewed is not True or outcome != "adopted" or basis != "detached_identity_review":
+            errors.append(
+                f"{label}: current externally_assigned value must be deliberately adopted by detached_identity_review"
+            )
+
+
 def validate_record(record: Any, label: str, errors: list[str]) -> None:
     if not isinstance(record, dict):
         errors.append(f"{label}: entry must be a mapping")
@@ -118,6 +164,7 @@ def validate_record(record: Any, label: str, errors: list[str]) -> None:
             errors.append(f"{label}: {status} requires confidence")
     if status == "exploratory" and value is not None and provenance is None:
         errors.append(f"{label}: populated exploratory value requires provenance")
+    validate_adoption(record, label, errors)
 
 def validate_references(data: dict[str, Any], path: Path, root: Path, errors: list[str]) -> None:
     refs = data.get("references")
@@ -359,6 +406,43 @@ def self_test() -> list[str]:
     validate_record({"value": "x", "status": "candidate", "provenance": "invented", "confidence": "high"}, "self.bad-provenance", errors)
     if not any("unrecognized provenance" in item for item in errors):
         failures.append("self-test: invalid provenance was not rejected")
+
+    errors = []
+    validate_record(
+        {
+            "value": "obedient_manager",
+            "status": "current",
+            "provenance": "externally_assigned",
+            "confidence": "high",
+        },
+        "self.external-current-without-review",
+        errors,
+    )
+    if not any("requires adoption evidence" in item for item in errors):
+        failures.append(
+            "self-test: externally assigned current value without adoption was not rejected"
+        )
+
+    errors = []
+    validate_record(
+        {
+            "value": "calm_delegation",
+            "status": "current",
+            "provenance": "externally_assigned",
+            "confidence": "medium",
+            "adoption": {
+                "reviewed": True,
+                "outcome": "adopted",
+                "basis": "detached_identity_review",
+            },
+        },
+        "self.external-current-reviewed",
+        errors,
+    )
+    if errors:
+        failures.append(
+            "self-test: valid externally assigned value with detached adoption review was rejected"
+        )
     with tempfile.TemporaryDirectory(prefix="identity-canon-selftest-") as directory:
         duplicate = Path(directory) / "duplicate.yaml"
         duplicate.write_text("a: 1\na: 2\n", encoding="utf-8")
@@ -448,7 +532,7 @@ def main() -> int:
             print(f"- {item}")
         return 1
     print("Agent Identity Canon validation: PASS")
-    print("Validated null-first semantics, lifecycle/provenance, post-canon personality frameworks, history, synthetic examples, references, and public-safety patterns.")
+    print("Validated null-first semantics, lifecycle/provenance, external-assignment adoption, post-canon personality frameworks, history, synthetic examples, references, and public-safety patterns.")
     return 0
 
 if __name__ == "__main__":
