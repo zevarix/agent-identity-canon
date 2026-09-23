@@ -68,6 +68,19 @@ The Identity Canon site must keep its own subject-specific visual anchor. Its cu
 
 Cross-links between the paired projects should be contextual and quiet: explain the identity-vs-memory ownership boundary where it matters and provide a related-project path, not a promotional banner. Neither project depends on the other.
 
+For readability, organize the public explainer around **reader jobs**, not one top-level section per schema concept. Prefer a small number of major editorial sections with related concepts grouped under meaningful subheads. Preserve useful deep anchors when consolidating content. The current reading arc is:
+
+1. why explicit identity matters;
+2. the model — ownership, honest unknowns, lifecycle, provenance;
+3. how to build and maintain canon;
+4. optional dimensions and downstream typology;
+5. a synthetic example;
+6. safety/epistemic boundaries;
+7. maturity;
+8. the paired memory relationship as a closing context.
+
+Do not re-fragment that arc merely because a new optional module or schema field is added.
+
 ## Public document reader
 
 Markdown remains canonical. The in-page reader is presentation-only progressive enhancement: keep real same-origin `.md` links, fetch only selected same-origin Markdown, construct DOM nodes rather than injecting raw HTML, preserve raw-source access, and verify close/Escape/focus return/mobile containment in a real browser.

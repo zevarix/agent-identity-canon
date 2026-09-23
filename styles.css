@@ -353,6 +353,23 @@ h3 {
   text-transform: uppercase;
 }
 
+.subheading[id] {
+  scroll-margin-top: 96px;
+}
+
+.minor-heading {
+  margin: 2.1rem 0 .9rem;
+  color: var(--text);
+  font-size: .92rem;
+  font-weight: 690;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.section-body > .subheading + .section-intro {
+  margin-bottom: 2rem;
+}
+
 .identity-flow {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -948,7 +965,44 @@ tbody td {
   color: var(--violet);
 }
 
+.closing {
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+
+.closing-inner {
+  max-width: 980px;
+}
+
+.closing-label {
+  margin: 0 0 .8rem;
+  color: var(--accent);
+  font-size: .76rem;
+  font-weight: 760;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.closing-statement {
+  max-width: 900px;
+  margin: 0 0 2.4rem;
+  color: var(--text);
+  font-size: clamp(1.85rem, 3.7vw, 3.35rem);
+  font-weight: 680;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+.closing .paired-projects {
+  margin-top: 0;
+}
+
+.closing .quiet {
+  max-width: var(--measure);
+  margin: 1.25rem 0 0;
+}
+
 footer {
+  border-top: 1px solid var(--line);
   padding: 2.5rem 0 3rem;
 }
 
