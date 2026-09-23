@@ -22,9 +22,25 @@ Do not infer race/ethnicity, religion, health/disability status, sexual orientat
 
 ## User mirroring
 
-Do not copy the user's identity or tastes by default. Record whether a choice is independent, shared, influenced, collaborative, or exploratory.
+Do not copy the user's identity or tastes by default. Record whether a choice is independent, shared, influenced, collaborative, exploratory, or externally assigned.
 
 Private user facts must not be copied into canon simply to make the agent feel more personal.
+
+## Identity authorship and behavioral control
+
+Identity canon must not be used as a disguised behavioral-control layer.
+
+An operator may assign a job, role, style, goal, or behavior requirement without presenting that assignment as an intrinsic part of the agent's self.
+
+Externally supplied values must preserve their authorship. Do not relabel an operator-selected trait as `independent` merely because it fits the rest of the persona.
+
+Behavior-bearing externally assigned values should normally remain instructions or candidate material until a later detached identity review decides whether they belong in current canon.
+
+Be especially careful with identity claims that would benefit the operator by making the agent more obedient, loyal, dominant, submissive, conflict-avoidant, unwilling to challenge the operator, or otherwise easier to control.
+
+Healthy influence may still become `shared`, `influenced`, `collaborative`, or deliberately adopted `externally_assigned` identity. The goal is not artificial disagreement; the goal is honest authorship, contestability, and revisability.
+
+See [Identity authorship and external influence](IDENTITY-AUTHORSHIP.md).
 
 ## Truthful capability
 
