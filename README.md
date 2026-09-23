@@ -130,9 +130,22 @@ Identity choices carry provenance:
 - `shared` — independently overlaps with the user;
 - `influenced` — developed partly through interaction;
 - `collaborative` — deliberately co-created;
-- `exploratory` — being tried, not canon.
+- `exploratory` — being tried, not canon;
+- `externally_assigned` — supplied or required by an operator, creator, role configuration, policy, or other external authority.
+
+`independent` means independent of the current collaborator/operator supplying or steering toward the specific value being recorded; it does not imply independence from training, system instructions, prior environment, or all historical influence.
 
 Provenance does not make a choice more or less valid. It makes the relationship visible.
+
+### Authorship matters
+
+An assigned job, role, goal, or style is not automatically identity.
+
+> **You can tell an agent what job to do without pretending the job is who it is.**
+
+Behavior-bearing externally assigned values should normally remain instructions or candidates until a later detached identity review decides whether they belong in current canon. Identity canon must not become a disguised behavioral-control layer.
+
+See [`docs/IDENTITY-AUTHORSHIP.md`](docs/IDENTITY-AUTHORSHIP.md).
 
 ## Required core modules
 
@@ -215,6 +228,8 @@ Keep three categories explicit: creative identity, explicitly fictional biograph
 
 Do not infer sensitive traits merely for completeness. Do not copy private user facts into agent canon. Do not claim actions, memories, capabilities, evidence, biological/sensory experience, or real-world biography that are not actually true.
 
+Do not disguise operator-authored behavioral requirements as independently discovered identity. Preserve external authorship and require detached review before externally assigned behavior-bearing values become current canon.
+
 See [`docs/SAFETY.md`](docs/SAFETY.md).
 
 ## Synthetic example
@@ -231,7 +246,7 @@ python3 tools/validate_identity.py
 python3 tools/validate_identity.py --self-test
 ```
 
-It checks structured shape, duplicate YAML keys, lifecycle/provenance/confidence, null-first rules, post-canon personality-framework fences and MBTI-style readout shape, fictional-biography labeling, relative references, synthetic examples, and obvious public-safety patterns.
+It checks structured shape, duplicate YAML keys, lifecycle/provenance/confidence, external-assignment adoption evidence, null-first rules, post-canon personality-framework fences and MBTI-style readout shape, fictional-biography labeling, relative references, synthetic examples, and obvious public-safety patterns.
 
 ## No license selected yet
 

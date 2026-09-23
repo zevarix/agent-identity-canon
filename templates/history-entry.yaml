@@ -11,9 +11,11 @@ previous:
   status: null
   provenance: null
   confidence: null
+  adoption: null
 current:
   value: null
   status: null
   provenance: null
   confidence: null
+  adoption: null
 references: null

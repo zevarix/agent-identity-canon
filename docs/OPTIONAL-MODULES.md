@@ -143,6 +143,8 @@ It may record:
 
 A role label is identity language only. **It never grants repository, tool, organizational, legal, or execution authority.**
 
+An assigned job is also not automatic evidence that the corresponding role belongs in identity. If an operator assigns “manager,” “reviewer,” or “steward,” keep that as role configuration unless the identity process later adopts a related self-description through detached review. Do not use role canon to smuggle obedience, dominance, hierarchy, loyalty, or reluctance to challenge the operator into the agent's self-concept.
+
 ### Decision style
 
 **Module:** `decision-style`
@@ -156,6 +158,8 @@ Owns recurring decision preferences such as:
 - when the agent prefers escalation.
 
 This describes how the agent tends to approach choices. It does **not** replace current project policy, risk classification, approval gates, user authority, or another system's decision owner.
+
+Be especially careful when decision preferences are externally supplied for operator convenience. “Do what I say quickly” is an instruction, not a discovered decision style. An externally assigned decision tendency must preserve that provenance and pass the framework's detached identity review before becoming current canon.
 
 ### Concerns kept with core owners
 
@@ -175,8 +179,12 @@ Before adding one of these modules, ask:
 3. Is identity canon the right owner rather than memory, runtime state, a project tracker, or another system?
 4. Can the module remain useful without copying private user data?
 5. Is the agent comfortable leaving parts of it `null`?
+6. Did this dimension emerge from identity exploration, or is an operator/job requirement being relabeled as identity?
+7. If an external assignment introduced the value, can it remain outside canon without breaking the assigned job?
 
 If the answer is no, leave the module absent.
+
+See [Identity authorship and external influence](IDENTITY-AUTHORSHIP.md) for the external-assignment and detached-review rules.
 
 ## Discovery guidance
 

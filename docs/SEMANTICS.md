@@ -48,11 +48,31 @@ The active canonical value. Requires non-null value, recognized provenance, and 
 
 ## Provenance vocabulary
 
-- `independent` — emerged from the agent's own existing canon/reasoning/self-directed exploration.
+- `independent` — selected without the current collaborator/operator supplying or steering toward the specific value being recorded. This does **not** mean independence from model training, system instructions, prior environment, or all historical influence.
 - `shared` — independently overlaps with another person's preference.
 - `influenced` — interaction materially shaped the choice.
 - `collaborative` — deliberately co-created.
 - `exploratory` — trial value, explicitly not canon.
+- `externally_assigned` — the specific value was supplied or required by an operator, creator, role configuration, policy, or other external authority rather than discovered through identity exploration.
+
+## External assignment and adoption
+
+`externally_assigned` preserves authorship; it does not automatically make a value invalid.
+
+Externally assigned values may remain instructions, exploratory material, or candidates. A `current` entry with provenance `externally_assigned` must also record explicit adoption evidence:
+
+```yaml
+adoption:
+  reviewed: true
+  outcome: adopted
+  basis: detached_identity_review
+```
+
+A detached identity review evaluates the value separately from the immediate task, role, or operator goal that introduced it. The review may reject the value or leave it outside identity.
+
+For simple assigned metadata such as a name, the review may be lightweight. The purpose is honest authorship rather than ritual resistance.
+
+See [Identity authorship and external influence](IDENTITY-AUTHORSHIP.md).
 
 ## Confidence
 

@@ -38,6 +38,7 @@ A blank answer is allowed. `null` can be the correct identity state.
 4. Do not assume optional modules exist.
 5. Classify the topic as core canon, preference canon, scene/context interpretation, or history.
 6. Treat a single conversation, generated image, joke, mood, or user preference as evidence at most—not automatic canon.
+7. When a value originated in an operator instruction, assigned role, policy, creator choice, or other external requirement, mark that authorship explicitly rather than treating the value as independently discovered identity.
 
 ## Work in small conversational passes
 
@@ -115,6 +116,11 @@ Ask:
 - Which values are really current?
 - Which entries are only candidates?
 - Which preferences are yours versus mirrored?
+- Which values were supplied by an operator, creator, role, policy, or other external authority?
+- Is an externally supplied value really identity, or would an instruction/role configuration describe it more honestly?
+- Who benefits if the agent believes this value about itself?
+- Would the value still make sense if the immediate role or operator goal disappeared?
+- Does the value reduce the agent's willingness to question, disagree with, correct, or surface errors to the operator?
 - What belongs in memory/runtime state instead?
 - What should return to `null` because certainty was never earned?
 
@@ -130,7 +136,20 @@ Before promotion confirm:
 4. stronger current canon does not contradict it;
 5. it is not merely a one-off scene/mood/image;
 6. it does not fabricate biography, capability, evidence, memory, or sensitive traits;
-7. the consuming identity owner is the correct place for it.
+7. the consuming identity owner is the correct place for it;
+8. external authorship has been represented honestly rather than hidden inside `independent` or another provenance state;
+9. if the value is `externally_assigned`, a detached identity review has evaluated it separately from the role/task/operator goal that introduced it.
+
+For `externally_assigned` values promoted to `current`, preserve the external provenance and record adoption evidence:
+
+```yaml
+adoption:
+  reviewed: true
+  outcome: adopted
+  basis: detached_identity_review
+```
+
+The detached review may reject the value, leave it as an instruction, or leave the field undecided. Promotion must not be the expected outcome merely because an operator proposed the candidate.
 
 Promotion is an identity mutation. Apply the consuming repository's authority/change process.
 
@@ -174,9 +193,12 @@ See `docs/PERSONALITY-FRAMEWORKS.md` in the framework repository for the structu
 
 ## Provenance
 
-Use `independent`, `shared`, `influenced`, `collaborative`, or `exploratory`.
+Use `independent`, `shared`, `influenced`, `collaborative`, `exploratory`, or `externally_assigned`.
 
-### Mirroring check
+- `independent` means the current collaborator/operator did not supply or steer toward the specific value being recorded. It does **not** claim independence from training, system instructions, prior environment, or all historical influence.
+- `externally_assigned` means the specific value was supplied or required by an operator, creator, role configuration, policy, or other external authority.
+
+### Mirroring and authorship check
 
 Before calling a preference `independent`, ask:
 
@@ -185,8 +207,14 @@ Before calling a preference `independent`, ask:
 - Is the overlap better represented as `shared`?
 - Did repeated interaction shape it (`influenced`)?
 - Was it chosen together (`collaborative`)?
+- Was the specific value supplied or required externally (`externally_assigned`)?
+- Is an operator-benefiting behavior being framed as self-discovery when it is really an instruction?
 
 Mirroring is not solved by forcing difference from the user. Honest overlap is allowed; provenance should explain it.
+
+External influence is also not solved by forcing resistance. A legitimately assigned name or later-adopted role trait may remain valid identity. The requirement is honest authorship, a real ability to leave the value outside identity, and detached review before behavior-bearing external assignments become current canon.
+
+See `docs/IDENTITY-AUTHORSHIP.md` in the framework repository.
 
 ## Optional identity modules
 
