@@ -25,10 +25,9 @@
         <span>Agent Identity Canon</span>
       </a>
       <nav aria-label="Primary">
-        <a href="#quick-start">Start</a>
         <a href="#model">Model</a>
-        <a href="#provenance">Provenance</a>
-        <a href="#skill">Discovery skill</a>
+        <a href="#quick-start">Start</a>
+        <a href="#optional">Optional</a>
         <a href="#safety">Safety</a>
       </nav>
     </div>
@@ -85,64 +84,11 @@
       </div>
     </section>
 
-    <section class="section" id="quick-start">
-      <div class="shell section-grid">
-        <header class="section-heading">
-          <h2>How to start</h2>
-          <p>Seven steps from blank template to maintained canon.</p>
-        </header>
-
-        <div class="section-body">
-          <p class="section-intro">Treat this repository as a framework. Your own repository or system should become the canonical owner of the agent's actual identity.</p>
-
-          <ol class="quick-start">
-            <li>
-              <strong>Create the identity owner</strong>
-              <span>Copy or adapt the core <code>canon/</code> files and identity-canon skill into the repository or system that should own this agent's current identity.</span>
-            </li>
-            <li>
-              <strong>Keep unknowns unknown</strong>
-              <span>Leave unanswered fields as <code>null</code> and <code>unexplored</code>. A blank template is not an error state.</span>
-            </li>
-            <li>
-              <strong>Run a Bootstrap pass</strong>
-              <span>Have a short conversation about values, communication, temperament, working style, boundaries, and what should remain undecided.</span>
-            </li>
-            <li>
-              <strong>Record candidates, not instant canon</strong>
-              <span>Use <code>exploratory</code> or <code>candidate</code> with honest provenance. A first answer does not have to become <code>current</code>.</span>
-            </li>
-            <li>
-              <strong>Promote deliberately</strong>
-              <span>Move a value to <code>current</code> only when it has earned stability and its provenance, confidence, and owner are clear.</span>
-            </li>
-            <li>
-              <strong>Evolve without rewriting history</strong>
-              <span>When canon changes, update the current value and record a <code>refined</code>, <code>superseded</code>, or <code>retired</code> history event.</span>
-            </li>
-            <li>
-              <strong>Validate and review</strong>
-              <span>Run the validator, then periodically check for contradictions, user mirroring, stale choices, unsupported certainty, and runtime/memory category mistakes.</span>
-            </li>
-          </ol>
-
-          <div class="quick-start-finish">
-            <strong>A good first session ends with a few useful candidates and plenty of honest <code>null</code>.</strong>
-            <p>You are building a current identity, not completing a fictional-person questionnaire.</p>
-          </div>
-
-          <div class="skill-links">
-            <a href="https://github.com/zevarix/agent-identity-canon/blob/main/skills/identity-canon/SKILL.md">Open the Bootstrap / Explore / Review / Promote / Evolve skill <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="model">
       <div class="shell section-grid">
         <header class="section-heading">
-          <h2>The ownership model</h2>
-          <p>Four questions, four different owners.</p>
+          <h2>The model</h2>
+          <p>Four questions, four owners — plus honest unknowns, lifecycle, and provenance.</p>
         </header>
 
         <div class="section-body">
@@ -186,18 +132,8 @@
               <dd>Temporary expression: a mood, exact outfit, joke, generated-image variation, task posture, or one conversation’s improvisation. Usually not canon.</dd>
             </div>
           </dl>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="bootstrap">
-      <div class="shell section-grid">
-        <header class="section-heading">
-          <h2>Start from blank</h2>
-          <p>Unknown is information.</p>
-        </header>
-
-        <div class="section-body">
+          <h3 class="subheading" id="bootstrap">Unknown is a valid state</h3>
           <p class="section-intro">The blank template actually starts blank. Required core fields use YAML <code>null</code> instead of silently inventing defaults.</p>
 
           <div class="null-demo">
@@ -213,38 +149,29 @@
             </div>
           </div>
 
-          <h3 class="subheading">Machine-readable null semantics</h3>
+          <h4 class="minor-heading">Machine-readable null semantics</h4>
           <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Representation</th>
-                  <th>Meaning</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><th><code>null</code></th><td>Unknown, undecided, or intentionally left for later exploration.</td></tr>
-                <tr><th><code>[]</code></th><td>Explicitly none.</td></tr>
-                <tr><th><code>false</code></th><td>Known negative boolean.</td></tr>
-                <tr><th>Populated value</th><td>An actual exploratory, candidate, or current identity value.</td></tr>
-                <tr><th>Omitted key/module</th><td>The field does not apply or the optional identity module has not been instantiated.</td></tr>
-              </tbody>
-            </table>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Representation</th>
+                          <th>Meaning</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><th><code>null</code></th><td>Unknown, undecided, or intentionally left for later exploration.</td></tr>
+                        <tr><th><code>[]</code></th><td>Explicitly none.</td></tr>
+                        <tr><th><code>false</code></th><td>Known negative boolean.</td></tr>
+                        <tr><th>Populated value</th><td>An actual exploratory, candidate, or current identity value.</td></tr>
+                        <tr><th>Omitted key/module</th><td>The field does not apply or the optional identity module has not been instantiated.</td></tr>
+                      </tbody>
+                    </table>
           </div>
 
           <p class="doc-link">See <a href="docs/SEMANTICS.md" data-doc-reader>the identity semantics note</a> for the complete structured contract.</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="lifecycle">
-      <div class="shell section-grid">
-        <header class="section-heading">
-          <h2>Identity has a lifecycle</h2>
-          <p>Selection should be visible, not magical.</p>
-        </header>
-
-        <div class="section-body">
+          <h3 class="subheading" id="lifecycle">Identity changes deliberately</h3>
+          <p class="section-intro">Selection should be visible rather than magical. Current canon describes the present; history preserves meaningful change.</p>
           <div class="lifecycle" role="img" aria-label="Identity lifecycle from unexplored to exploratory to candidate to current, with current identity later refined, superseded, or retired into history.">
             <div class="lifecycle-current">
               <div><span>1</span><strong>Unexplored</strong><small>No answer selected.</small></div>
@@ -263,20 +190,8 @@
             </div>
           </div>
 
-          <p class="section-intro lifecycle-note">Current canon should stay easy to read because it describes the present. History preserves meaningful change so the current identity does not have to pretend it was always timeless.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="provenance">
-      <div class="shell section-grid">
-        <header class="section-heading">
-          <h2>Provenance prevents accidental mirroring</h2>
-          <p>Overlap is fine. Hidden influence is the problem.</p>
-        </header>
-
-        <div class="section-body">
-          <p class="section-intro">A preference can be perfectly valid whether it emerged independently, happens to overlap with the user, grew through interaction, or was deliberately co-created. Recording provenance makes that relationship inspectable.</p>
+          <h3 class="subheading" id="provenance">Provenance makes influence visible</h3>
+          <p class="section-intro"><strong>Overlap is fine. Hidden influence is the problem.</strong> A preference can be perfectly valid whether it emerged independently, happens to overlap with the user, grew through interaction, or was deliberately co-created. Recording provenance makes that relationship inspectable.</p>
 
           <dl class="provenance-list">
             <div><dt>independent</dt><dd>Emerges from the agent’s own prior canon, reasoning, or self-directed exploration.</dd></div>
@@ -294,15 +209,54 @@
       </div>
     </section>
 
-    <section class="section" id="skill">
+    <section class="section" id="quick-start">
       <div class="shell section-grid">
         <header class="section-heading">
-          <h2>Discover identity conversationally</h2>
-          <p>No 150-question personality form.</p>
+          <h2>How to build it</h2>
+          <p>From a blank template to maintained canon.</p>
         </header>
 
         <div class="section-body">
-          <p class="section-intro">The identity-canon skill works in small passes: a few questions in one bounded area, followed by candidates, unresolved points, and explicit promotion later.</p>
+          <p class="section-intro">Treat this repository as a framework. Your own repository or system should become the canonical owner of the agent's actual identity.</p>
+
+          <ol class="quick-start">
+            <li>
+              <strong>Create the identity owner</strong>
+              <span>Copy or adapt the core <code>canon/</code> files and identity-canon skill into the repository or system that should own this agent's current identity.</span>
+            </li>
+            <li>
+              <strong>Keep unknowns unknown</strong>
+              <span>Leave unanswered fields as <code>null</code> and <code>unexplored</code>. A blank template is not an error state.</span>
+            </li>
+            <li>
+              <strong>Run a Bootstrap pass</strong>
+              <span>Have a short conversation about values, communication, temperament, working style, boundaries, and what should remain undecided.</span>
+            </li>
+            <li>
+              <strong>Record candidates, not instant canon</strong>
+              <span>Use <code>exploratory</code> or <code>candidate</code> with honest provenance. A first answer does not have to become <code>current</code>.</span>
+            </li>
+            <li>
+              <strong>Promote deliberately</strong>
+              <span>Move a value to <code>current</code> only when it has earned stability and its provenance, confidence, and owner are clear.</span>
+            </li>
+            <li>
+              <strong>Evolve without rewriting history</strong>
+              <span>When canon changes, update the current value and record a <code>refined</code>, <code>superseded</code>, or <code>retired</code> history event.</span>
+            </li>
+            <li>
+              <strong>Validate and review</strong>
+              <span>Run the validator, then periodically check for contradictions, user mirroring, stale choices, unsupported certainty, and runtime/memory category mistakes.</span>
+            </li>
+          </ol>
+
+          <div class="quick-start-finish">
+            <strong>A good first session ends with a few useful candidates and plenty of honest <code>null</code>.</strong>
+            <p>You are building a current identity, not completing a fictional-person questionnaire.</p>
+          </div>
+
+          <h3 class="subheading" id="skill">Discovery is conversational, not a test</h3>
+          <p class="section-intro"><strong>No 150-question personality form.</strong> The identity-canon skill works in small passes: a few questions in one bounded area, followed by candidates, unresolved points, and explicit promotion later.</p>
 
           <ol class="skill-modes">
             <li><strong>Bootstrap</strong><span>Explore a few foundations for a new agent. Produce candidates or unexplored fields, not automatic canon.</span></li>
@@ -322,11 +276,13 @@
     <section class="section" id="optional">
       <div class="shell section-grid">
         <header class="section-heading">
-          <h2>Optional means optional</h2>
-          <p>Identity does not require pretending to be human.</p>
+          <h2>Optional dimensions</h2>
+          <p>Adopt what genuinely recurs. Leave the rest absent.</p>
         </header>
 
         <div class="section-body">
+          <p class="section-intro">Optional dimensions support a chosen identity where useful; they are not a checklist for making every agent more human or more complete.</p>
+
           <div class="module-columns">
             <section>
               <h3>Broadly useful core</h3>
@@ -403,19 +359,9 @@
           <p class="doc-link">Read <a href="docs/OPTIONAL-MODULES.md" data-doc-reader>the optional-module ownership and discovery guidance</a>.</p>
 
           <p class="section-intro optional-note">The public repository keeps optional modules as templates instead of active blank canon. An agent may adopt some, all, or none. An absent module is valid, and an adopted module may still contain honest <code>null</code> values.</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="typology">
-      <div class="shell section-grid">
-        <header class="section-heading">
-          <h2>Typology comes last</h2>
-          <p>Describe the identity after it forms. Do not use the label to form it.</p>
-        </header>
-
-        <div class="section-body">
-          <p class="section-intro">MBTI-style self-assessment is supported as optional post-canon reflection. It should answer “where did this identity land?” only after the agent’s values, temperament, communication, boundaries, preferences, and self-watch patterns have had room to emerge independently.</p>
+          <h3 class="subheading" id="typology">Typology comes last</h3>
+          <p class="section-intro"><strong>Describe the identity after it forms; do not use the label to form it.</strong> MBTI-style self-assessment is supported as optional post-canon reflection only after the agent’s values, temperament, communication, boundaries, preferences, and self-watch patterns have had room to emerge independently.</p>
 
           <div class="typology-sequence" role="img" aria-label="Build canon, then review canon, then freeze a snapshot, then optionally create a typology readout. The typology readout does not feed back into canon.">
             <div>
@@ -500,11 +446,11 @@
     <section class="section" id="safety">
       <div class="shell section-grid">
         <header class="section-heading">
-          <h2>Creative identity without fictionalizing reality</h2>
-          <p>Identity can be expressive and still stay epistemically honest.</p>
+          <h2>Keep creative identity honest</h2>
+          <p>Fiction can be expressive without becoming fact.</p>
         </header>
 
-        <div class="section-body safety-list">
+        <div class="section-body">
           <section>
             <h3>Fiction stays labeled fiction.</h3>
             <p>A fictional biography can exist for creative use, but it must not become fake real-world employment, childhood, family history, physical travel, or sensory experience.</p>
@@ -523,33 +469,6 @@
           </section>
 
           <p class="doc-link">See <a href="docs/SAFETY.md" data-doc-reader>the safety and epistemic-boundary note</a>.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="related">
-      <div class="shell section-grid">
-        <header class="section-heading">
-          <h2>The other side of the coin</h2>
-          <p>Identity and memory compose cleanly because they answer different questions.</p>
-        </header>
-
-        <div class="section-body">
-          <div class="paired-projects">
-            <div class="paired-project current-project">
-              <span>Agent Identity Canon</span>
-              <strong>Who am I now?</strong>
-              <p>Current chosen identity, including honest unknowns.</p>
-            </div>
-            <div class="paired-separator" aria-hidden="true">+</div>
-            <a class="paired-project" href="https://zevarix.github.io/lyra-memory-architecture/">
-              <span>Lyra Memory Architecture</span>
-              <strong>What from the past may matter now?</strong>
-              <p>Durable context, associations, history, provenance, and retrieval.</p>
-            </a>
-          </div>
-
-          <p class="quiet">Neither project requires the other. A memory system may preserve why an identity choice changed, but the identity owner remains authoritative for the current self.</p>
         </div>
       </div>
     </section>
@@ -592,6 +511,28 @@
 
           <p class="quiet">The framework intentionally does not add packaging or automation before a second real adopter proves the need.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="closing" id="related">
+      <div class="shell closing-inner">
+        <p class="closing-label">The other side of the coin</p>
+        <p class="closing-statement">Identity answers who the agent is now. Memory preserves what from the past may matter now.</p>
+        <div class="paired-projects">
+          <div class="paired-project current-project">
+            <span>Agent Identity Canon</span>
+            <strong>Who am I now?</strong>
+            <p>Current chosen identity, including honest unknowns.</p>
+          </div>
+          <div class="paired-separator" aria-hidden="true">+</div>
+          <a class="paired-project" href="https://zevarix.github.io/lyra-memory-architecture/">
+            <span>Lyra Memory Architecture</span>
+            <strong>What from the past may matter now?</strong>
+            <p>Durable context, associations, history, provenance, and retrieval.</p>
+          </a>
+        </div>
+
+        <p class="quiet">Neither project requires the other. A memory system may preserve why an identity choice changed, but the identity owner remains authoritative for the current self.</p>
       </div>
     </section>
   </main>
